@@ -24,15 +24,18 @@ export default function About() {
             <div className="w-20 h-1 bg-[#f2bac9] mb-8"></div>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Hola, soy <strong className="text-[#1e3a5f]">Laura Quintero</strong>, entrenadora certificada de perros con más de 15 años de experiencia ayudando a familias a construir relaciones más fuertes y felices con sus compañeros caninos.
+              Hola, soy <strong className="text-[#1e3a5f]">Laura Quintero</strong>, veterinaria especializada en Nutrición Clínica para perros y gatos. A lo largo de mi trayectoria he comprobado cómo una alimentación adecuada puede transformar la calidad de vida de los animales, tanto en pacientes sanos como en aquellos que conviven con distintas patologías.
+
             </p>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Mi pasión por los perros comenzó en mi infancia, y desde entonces he dedicado mi vida a comprender su comportamiento, necesidades y la mejor manera de comunicarme con ellos. Me especializo en métodos de entrenamiento positivos que respetan la naturaleza única de cada perro.
+              Mi objetivo  <strong className="text-[#f2bac9]">es acercar la nutrición veterinaria de calidad a más animales, tutores y profesionales </strong>, ofreciendo asesoramiento individual y adaptado a las necesidades reales de cada paciente. Quiero ayudarte a que tu compañero disfrute de una vida más saludable, cómoda y equilibrada.
             </p>
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-              Mi misión es simple: <strong className="text-[#f2bac9]">ayudar a cada perro a alcanzar su máximo potencial</strong> mientras fortalezco el vínculo entre mascotas y sus dueños. Creo que cada perro merece amor, paciencia y la guía adecuada para prosperar.
+             <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
+             Reserva tu consulta y elaboraremos juntos un plan nutricional seguro, personalizado y eficaz.
+
             </p>
 
             <div className="grid grid-cols-2 gap-6">
