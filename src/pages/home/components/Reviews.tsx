@@ -20,13 +20,7 @@ const reviews = [
     image: 'https://readdy.ai/api/search-image?query=Asian%20woman%20in%20her%20late%2020s%20smiling%20with%20a%20small%20beagle%20puppy%20in%20her%20arms%20in%20a%20bright%20living%20room%2C%20soft%20natural%20light%2C%20lifestyle%20photography%2C%20warm%20atmosphere%2C%20simple%20modern%20background&width=120&height=120&seq=review-person-003&orientation=squarish',
     text: 'As a first-time dog owner, I was overwhelmed with puppy training. Sarah\'s puppy socialization classes were a game-changer! My beagle, Charlie, learned so much and I gained the confidence I needed. Sarah is incredibly knowledgeable and makes learning fun for both dogs and owners.'
   },
-  {
-    name: 'David Patterson',
-    location: 'San Francisco, CA',
-    rating: 5,
-    image: 'https://readdy.ai/api/search-image?query=Professional%20man%20in%20his%2050s%20with%20gray%20hair%20smiling%20with%20a%20labrador%20retriever%20outdoors%20in%20a%20garden%20setting%2C%20golden%20hour%20lighting%2C%20portrait%20photography%2C%20genuine%20warmth%2C%20simple%20natural%20background&width=120&height=120&seq=review-person-004&orientation=squarish',
-    text: 'Sarah\'s grooming services are exceptional. My lab, Buddy, always looks amazing and actually enjoys his grooming sessions now. She\'s gentle, professional, and clearly loves what she does. The facility is spotless and I trust her completely with my best friend.'
-  },
+  
   {
     name: 'Amanda Foster',
     location: 'Austin, TX',
