@@ -49,7 +49,10 @@ export default function Reviews() {
       name: 'María González',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-hispanic-woman-30s-friendly-warm-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-maria&orientation=squarish',
       rating: 5,
-      text: '¡Sarah transformó completamente a nuestro labrador hiperactivo! Ahora es un perro bien educado que escucha comandos y se comporta maravillosamente tanto en casa como en público. ¡Altamente recomendada!',
+      text: 'Estamos muy contentos con la ayuda de Laura, es una gran profesional que se preocupa de verdad por los peludos y se nota desde el primer momento por su atención, implicación y cariño. 
+Desde que nos adapta la dieta casera para Khali, notamos una gran mejora ya desde el primer día en sus síntomas digestivos, y también muy pronto en su bienestar general: pelo, peso, ánimo...
+Además, nos sentimos muy acompañados y respaldados porque siempre está disponible y dispuesta para cualquier duda o situación que pueda surgir, y eso es una gran tranquilidad y se valora muchísimo.
+Tanto Khali como sus humanos estamos muy agradecidos con ella',
       dog: 'Max, Labrador de 2 años',
     },
     {
