@@ -48,7 +48,7 @@ export default function Reviews() {
     {
       name: 'María González',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-hispanic-woman-30s-friendly-warm-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-maria&orientation=squarish',
-      rating: 10,
+      rating: 5,
       text:'Estamos muy contentos con la ayuda de Laura, es una gran profesional que se preocupa de verdad por los peludos y se nota desde el primer momento por su atención, implicación y cariño. 
             Desde que nos adapta la dieta casera para Khali, notamos una gran mejora ya desde el primer día en sus síntomas digestivos, y también muy pronto en su bienestar general: pelo, peso, ánimo...
             Además, nos sentimos muy acompañados y respaldados porque siempre está disponible y dispuesta para cualquier duda o situación que pueda surgir, y eso es una gran tranquilidad y se valora muchísimo.
@@ -69,27 +69,7 @@ export default function Reviews() {
       text: 'Adopté a mi perro rescatado hace 6 meses y Sarah me ayudó con todo el proceso. Su apoyo y orientación fueron invaluables. ¡Ahora tengo un compañero feliz y bien adaptado!',
       dog: 'Rocky, Mestizo de 3 años',
     },
-    {
-      name: 'David López',
-      image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-man-45s-friendly-confident-natural-outdoor-portrait&width=150&height=150&seq=review-david&orientation=squarish',
-      rating: 5,
-      text: 'Las clases de socialización de cachorros fueron fantásticas. Mi cachorro aprendió a interactuar con otros perros y personas de manera positiva. ¡Valió cada centavo!',
-      dog: 'Bella, Beagle de 6 meses',
-    },
-    {
-      name: 'Laura Fernández',
-      image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-woman-28s-cheerful-warm-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-laura&orientation=squarish',
-      rating: 5,
-      text: 'Sarah ayudó a mi pastor alemán con problemas de ansiedad por separación. Su enfoque paciente y métodos efectivos hicieron una diferencia increíble. ¡Gracias!',
-      dog: 'Thor, Pastor Alemán de 5 años',
-    },
-    {
-      name: 'Roberto Sánchez',
-      image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-man-50s-distinguished-friendly-natural-outdoor-portrait&width=150&height=150&seq=review-roberto&orientation=squarish',
-      rating: 5,
-      text: 'El servicio de paseo de perros es confiable y profesional. Sé que mi perro está en buenas manos y siempre regresa feliz y cansado después de sus aventuras.',
-      dog: 'Coco, Bulldog Francés de 3 años',
-    },
+    
   ];
 
   return (
