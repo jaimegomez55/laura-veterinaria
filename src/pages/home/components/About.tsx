@@ -41,6 +41,10 @@ export default function About() {
 
              </p> 
 
+             <ul>Experiencia</ul>
+             <il>peros patologias</il>
+             <il>peros patologias</il>
+
              
             
              
