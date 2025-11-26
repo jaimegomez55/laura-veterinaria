@@ -37,7 +37,7 @@ export default function About() {
              
              </p>
             
-            <p Reserva tu consulta aqui.
+            <p Reserva tu consulta aqui. 
 
              </p> 
 
