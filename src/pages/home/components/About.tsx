@@ -34,6 +34,7 @@ export default function About() {
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
              <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
+             
              <p Reserva tu consulta y elaboraremos juntos un plan nutricional seguro, personalizado y eficaz.<p>
             
 
