@@ -36,11 +36,14 @@ export default function About() {
              <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
              
              </p>
+            
+            <p Reserva tu consulta aqui.
+
+             </p> 
+
              
             
-            <p Reserva tu consulta y elaboraremos juntos un plan nutricional seguro, personalizado y eficaz.
-            
-             </p>
+             
              
               
             
