@@ -49,7 +49,20 @@ export default function Reviews() {
             Tanto Khali como sus humanos estamos muy agradecidos con ella',
       dog: 'Max, Labrador de 2 años',
     },
-    
+    {
+      name: 'Carlos Rodríguez',
+      image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-latino-man-40s-confident-friendly-natural-outdoor-portrait&width=150&height=150&seq=review-carlos&orientation=squarish',
+      rating: 5,
+      text: 'El servicio de peluquería es excepcional. Mi golden retriever siempre sale luciendo hermoso y relajado. El equipo es profesional, cariñoso y realmente se preocupa por el bienestar de las mascotas.',
+      dog: 'Luna, Golden Retriever de 4 años',
+    },
+    {
+      name: 'Ana Martínez',
+      image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-woman-35s-warm-approachable-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-ana&orientation=squarish',
+      rating: 5,
+      text: 'Adopté a mi perro rescatado hace 6 meses y Sarah me ayudó con todo el proceso. Su apoyo y orientación fueron invaluables. ¡Ahora tengo un compañero feliz y bien adaptado!',
+      dog: 'Rocky, Mestizo de 3 años',
+    },
 
   ];
 

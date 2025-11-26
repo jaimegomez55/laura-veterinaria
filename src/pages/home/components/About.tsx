@@ -34,10 +34,10 @@ export default function About() {
 
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
              <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
-             </p>
-             Reserva tu consulta y elaboraremos juntos un plan nutricional seguro, personalizado y eficaz.
+             </p> Reserva tu consulta y elaboraremos juntos un plan nutricional seguro, personalizado y eficaz.</p>
+            
 
-            </p>
+            
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-[#bad7f2] to-[#bad7f2]/70 p-6 rounded-xl">
