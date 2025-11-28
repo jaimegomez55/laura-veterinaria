@@ -42,17 +42,7 @@ export default function VideoSection() {
               </p>
             </div>
 
-            <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-[#f2bac9] rounded-full">
-                <i className="ri-flashlight-fill text-3xl text-[#1e3a5f]"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-[#1e3a5f] mb-2">
-                Más energía
-              </h3>
-              <p className="text-[#1e3a5f]/70">
-                Nutrientes de calidad que aumentan la vitalidad diaria
-              </p>
-            </div>
+            
 
             <div className="text-center">
               <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-[#bad7f2] rounded-full">
