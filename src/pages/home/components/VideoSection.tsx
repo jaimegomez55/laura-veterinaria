@@ -35,7 +35,7 @@ export default function VideoSection() {
                 <i className="ri-heart-pulse-fill text-3xl text-[#1e3a5f]"></i>
               </div>
               <h3 className="text-xl font-semibold text-[#1e3a5f] mb-2">
-                Mejora la salud
+                Mejora la salud con ellos
               </h3>
               <p className="text-[#1e3a5f]/70">
                 Alimentación natural que fortalece el sistema inmunológico
