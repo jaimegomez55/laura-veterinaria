@@ -52,7 +52,7 @@ export default function VideoSection() {
                 Mayor felicidad
               </h3>
               <p className="text-[#1e3a5f]/70">
-                Perros más felices con una dieta equilibrada y sabrosa
+                Perros más felices con una dieta equilibrada y sabrosa como a ellos
               </p>
             </div>
           </div>
