@@ -1,6 +1,3 @@
-
-import { Link } from 'react-scroll';
-
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-[#bad7f2] to-[#f2bac9] overflow-hidden">
@@ -28,14 +25,12 @@ export default function Hero() {
             <p className="text-xl text-[#1e3a5f]/80 mb-8 leading-relaxed max-w-xl">
               Te explico paso a paso todo lo que necesitas saber para hacer el cambio, acompañándote en el proceso y resolviendo todas las dudas que puedas tener. Pincha aqui
             </p>
-            <Link
-              to="services"
-              smooth={true}
-              duration={800}
+            <a 
+              href="https://calendly.com/laura-quintero-vet/30min"
               className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
             >
-              Cotillea los servicios
-            </Link>
+              Agenda tu consulta
+            </a>
           </div>
 
           {/* Right Image */}
