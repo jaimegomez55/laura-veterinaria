@@ -37,37 +37,12 @@ export default function About() {
              
              </p>
             
-            <p>Reserva tu consulta aqui.</p> 
-
-             
-
-             
-            
-             
-             
-              
-            
-            
-            
-
-            
-
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-[#bad7f2] to-[#bad7f2]/70 p-6 rounded-xl">
-                <div className="w-12 h-12 flex items-center justify-center mb-3">
-                  <i className="ri-award-fill text-4xl text-white"></i>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-1">15+</h3>
-                <p className="text-white/90">Años de Experiencia</p>
-              </div>
-              <div className="bg-gradient-to-br from-[#f2bac9] to-[#f2bac9]/70 p-6 rounded-xl">
-                <div className="w-12 h-12 flex items-center justify-center mb-3">
-                  <i className="ri-heart-fill text-4xl text-white"></i>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-1">500+</h3>
-                <p className="text-white/90">Perros Entrenados</p>
-              </div>
-            </div>
+             <a 
+              href="https://calendly.com/laura-quintero-vet/30min"
+              className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
+            >
+              Agenda tu consulta
+            </a>
           </div>
         </div>
       </div>
