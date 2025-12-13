@@ -57,7 +57,7 @@ export default function Reviews() {
       name: 'Ana Martínez',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-woman-35s-warm-approachable-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-ana&orientation=squarish',
       rating: 5,
-      text: 'Hola, nosotros hemos pedido a Laura una dieta para nuestro perro Zepi y la  verdad es que estamos muy contentos con el resultado ya que al perro se le ve mejor y la come estupendamente. La verdad es que es un descubrimiento haber dado con esta súper veterinaria que nos ha ayudado un montón. Gracias por todo Laura.'
+      text: 'Hola, nosotros hemos pedido a Laura una dieta para nuestro perro Zepi y la  verdad es que estamos muy contentos con el resultado ya que al perro se le ve mejor y la come estupendamente. La verdad es que es un descubrimiento haber dado con esta súper veterinaria que nos ha ayudado un montón. Gracias por todo Laura.',
       dog: 'Zepi, Mestizo de 3 años',
     },
 
