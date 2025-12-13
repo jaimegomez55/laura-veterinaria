@@ -17,8 +17,8 @@ export default function HomePage() {
       <About />
       <Services />
       <Reviews />
-      <CallToAction />
       <SuccessStories />
+      <CallToAction />
       <Footer />
     </div>
   );
