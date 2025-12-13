@@ -50,8 +50,8 @@ export default function Reviews() {
       name: 'Carlos Rodríguez',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-latino-man-40s-confident-friendly-natural-outdoor-portrait&width=150&height=150&seq=review-carlos&orientation=squarish',
       rating: 5,
-      text: 'El servicio de peluquería es excepcional. Mi golden retriever siempre sale luciendo hermoso y relajado. El equipo es profesional, cariñoso y realmente se preocupa por el bienestar de las mascotas.',
-      dog: 'Luna, Golden Retriever de 4 años',
+      text: 'Estamos muy contentos con la ayuda de Laura, es una gran profesional que se preocupa de verdad por los peludos y se nota desde el primer momento por su atención, implicación y cariño.  Desde que nos adapta la dieta casera para Khali, notamos una gran mejora ya desde el primer día en sus síntomas digestivos, y también muy pronto en su bienestar general: pelo, peso, ánimo... Además, nos sentimos muy acompañados y respaldados porque siempre está disponible y dispuesta para cualquier duda o situación que pueda surgir, y eso es una gran tranquilidad y se valora muchísimo. Tanto Khali como sus humanos estamos muy agradecidos con ella.',
+      dog: 'KHAL, Golden Retriever de 4 años',
     },
     {
       name: 'Ana Martínez',
