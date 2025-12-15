@@ -9,11 +9,11 @@ export default function CallToAction() {
           </div>
           
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            ¿Listo para Transformar la Vida de Tu Perro?
+            ¿Listo para transformar la vida de tu mascota?
           </h2>
           
           <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Comienza hoy el viaje hacia un compañero más feliz, saludable y bien educado. Reserva tu consulta gratuita y descubre cómo podemos ayudarte.
+            Comienza hoy el viaje hacia un compañero más feliz, saludable. Agenda tu consulta y descubre cómo puedo ayudarte.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
