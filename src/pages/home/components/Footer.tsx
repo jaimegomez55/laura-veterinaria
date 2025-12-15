@@ -17,7 +17,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-white/80 leading-relaxed">
-              Ayudando a familias a construir relaciones más fuertes con sus compañeros caninos desde 2008.
+               Acompaño a familias a mejorar la salud y calidad de vida de sus mascotas a través de una alimentación adecuada.
             </p>
           </div>
 
@@ -106,21 +106,14 @@ export default function Footer() {
                 <i className="ri-facebook-fill text-xl"></i>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/laura_quintero_veterinaria/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#f2bac9] rounded-full transition-all duration-300"
               >
                 <i className="ri-instagram-fill text-xl"></i>
               </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#f2bac9] rounded-full transition-all duration-300"
-              >
-                <i className="ri-twitter-fill text-xl"></i>
-              </a>
+              
             </div>
           </div>
         </div>
