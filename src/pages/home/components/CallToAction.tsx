@@ -40,20 +40,15 @@ export default function CallToAction() {
               <div className="w-16 h-16 flex items-center justify-center bg-white rounded-full mx-auto mb-4">
                 <i className="ri-phone-fill text-3xl text-[#bad7f2]"></i>
               </div>
-              <p className="text-white font-semibold">+34 123 456 789</p>
+              <p className="text-white font-semibold">+34 634359766</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 flex items-center justify-center bg-white rounded-full mx-auto mb-4">
                 <i className="ri-mail-fill text-3xl text-[#f2bac9]"></i>
               </div>
-              <p className="text-white font-semibold">info@dogcare.com</p>
+              <p className="text-white font-semibold">laura.quintero.vet@gmail.com</p>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white rounded-full mx-auto mb-4">
-                <i className="ri-map-pin-fill text-3xl text-[#bad7f2]"></i>
-              </div>
-              <p className="text-white font-semibold">Madrid, España</p>
-            </div>
+            
           </div>
         </div>
       </div>
