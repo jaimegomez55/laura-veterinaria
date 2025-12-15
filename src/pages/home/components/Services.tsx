@@ -35,26 +35,26 @@ export default function Services() {
   const services = [
     {
       icon: 'ri-graduation-cap-fill',
-      title: 'Entrenamiento de Perros',
-      description: 'Programas de entrenamiento personalizados adaptados a las necesidades únicas de tu perro, desde obediencia básica hasta comandos avanzados.',
+      title: 'Evaluación inicial personalizada',
+      description: 'Analizo el caso de tu perro o gato para saber si es apto para una dieta natural y qué enfoque nutricional necesita según su situación actual.',
       color: 'from-[#bad7f2] to-[#bad7f2]/80',
     },
     {
       icon: 'ri-scissors-2-fill',
-      title: 'Peluquería Profesional',
-      description: 'Servicios completos de aseo que incluyen baño, corte de pelo, corte de uñas y cuidado de oídos para mantener a tu perro luciendo y sintiéndose genial.',
+      title: 'Primera consulta nutricional',
+      description: 'Sesión online de 45 minutos donde revisamos su historial, diagnóstico, síntomas, medicación y alimentación actual, y te explico paso a paso cómo será el proceso.',
       color: 'from-[#f2bac9] to-[#f2bac9]/80',
     },
     {
       icon: 'ri-walk-fill',
-      title: 'Paseo de Perros',
-      description: 'Servicios confiables de paseo de perros para mantener a tu mascota activa, saludable y feliz cuando estás ocupado.',
+      title: 'Dieta adaptada a su patología',
+      description: 'En un plazo aproximado de 10 días recibirás una dieta adaptada a tu mascota, que ajustare las veces que haga falta.',
       color: 'from-[#bad7f2] to-[#bad7f2]/80',
     },
     {
       icon: 'ri-heart-add-fill',
-      title: 'Apoyo en Adopción',
-      description: 'Orientación experta para ayudarte a encontrar el compañero perfecto y asegurar una transición suave a tu hogar.',
+      title: 'Acompañamiento y seguimiento',
+      description: 'Realizamos revisiones cada dos semanas y tienes consultas de seguimiento para resolver dudas y ajustar la dieta durante el proceso.',
       color: 'from-[#f2bac9] to-[#f2bac9]/80',
     },
     {
