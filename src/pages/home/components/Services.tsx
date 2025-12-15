@@ -34,13 +34,13 @@ const services = [
 export default function Services() {
   const services = [
     {
-      icon: 'ri-graduation-cap-fill',
+      icon: 'ri-psychotherapy-fill?',
       title: 'Evaluación inicial personalizada',
       description: 'Analizo el caso de tu perro o gato para saber si es apto para una dieta natural y qué enfoque nutricional necesita según su situación actual.',
       color: 'from-[#bad7f2] to-[#bad7f2]/80',
     },
     {
-      icon: 'ri-scissors-2-fill',
+      icon: 'ri-team-fill',
       title: 'Primera consulta nutricional',
       description: 'Sesión online de 45 minutos donde revisamos su historial, diagnóstico, síntomas, medicación y alimentación actual, y te explico paso a paso cómo será el proceso.',
       color: 'from-[#f2bac9] to-[#f2bac9]/80',
@@ -57,18 +57,7 @@ export default function Services() {
       description: 'Realizamos revisiones cada dos semanas y tienes consultas de seguimiento para resolver dudas y ajustar la dieta durante el proceso.',
       color: 'from-[#f2bac9] to-[#f2bac9]/80',
     },
-    {
-      icon: 'ri-team-fill',
-      title: 'Socialización de Cachorros',
-      description: 'Clases de socialización temprana para ayudar a tu cachorro a desarrollar confianza y habilidades sociales positivas.',
-      color: 'from-[#bad7f2] to-[#bad7f2]/80',
-    },
-    {
-      icon: 'ri-psychotherapy-fill',
-      title: 'Consulta de Comportamiento',
-      description: 'Soluciones profesionales para problemas de comportamiento como ansiedad, agresión y miedo.',
-      color: 'from-[#f2bac9] to-[#f2bac9]/80',
-    },
+    
   ];
 
   return (
