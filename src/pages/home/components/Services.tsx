@@ -34,7 +34,7 @@ const services = [
 export default function Services() {
   const services = [
     {
-      icon: 'ri-psychotherapy-fill?',
+      icon: 'ri-psychotherapy-fill',
       title: 'Evaluación inicial personalizada',
       description: 'Analizo el caso de tu perro o gato para saber si es apto para una dieta natural y qué enfoque nutricional necesita según su situación actual.',
       color: 'from-[#bad7f2] to-[#bad7f2]/80',
