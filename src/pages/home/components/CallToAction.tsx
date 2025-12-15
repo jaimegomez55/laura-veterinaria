@@ -26,14 +26,7 @@ export default function CallToAction() {
               Agenda tu consulta
             
             </a>
-            <a
-              href="https://example.com/contact"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#1e3a5f] text-white hover:bg-[#2d5a8f] font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
-            >
-              Contáctanos
-            </a>
+            
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
