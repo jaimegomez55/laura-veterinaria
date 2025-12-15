@@ -44,21 +44,21 @@ export default function Reviews() {
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-hispanic-woman-30s-friendly-warm-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-maria&orientation=squarish',
       rating: 5,
       text:'Cuando a Lobo le detectaron Leishmania con afectación al riñón tan severa, nos temíamos lo peor. Hemos tenido otros perros con esta enfermedad y sabíamos a lo nos enfrentábamos. De hecho, todos los perros a los que les había pasado esto, se nos habían muerto en muy poco tiempo. Por eso decidimos hacer algo diferente. Además de tomar medicación, una alimentación adecuada a su enfermedad podría ayudar. Y tanto que ayudó!!! Lobo está recuperado prácticamente. De los 23 kilos que había perdido, ha recuperado ya 10 en unos pocos meses. Está vital y alegre. Además le encanta la comida que le preparamos. Son recetas fáciles de preparar, nada laborioso, y que puedes organizarte para varios días. No podemos estar más agradecidos con Laura.',
-      dog: 'Lobo, Labrador de 2 años',
+      dog: 'Lobo, Labrador ',
     },
     {
       name: 'Carlos Rodríguez',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-latino-man-40s-confident-friendly-natural-outdoor-portrait&width=150&height=150&seq=review-carlos&orientation=squarish',
       rating: 5,
       text: 'Estamos muy contentos con la ayuda de Laura, es una gran profesional que se preocupa de verdad por los peludos y se nota desde el primer momento por su atención, implicación y cariño.  Desde que nos adapta la dieta casera para Khali, notamos una gran mejora ya desde el primer día en sus síntomas digestivos, y también muy pronto en su bienestar general: pelo, peso, ánimo... Además, nos sentimos muy acompañados y respaldados porque siempre está disponible y dispuesta para cualquier duda o situación que pueda surgir, y eso es una gran tranquilidad y se valora muchísimo. Tanto Khali como sus humanos estamos muy agradecidos con ella.',
-      dog: 'Khali, Golden Retriever de 4 años',
+      dog: 'Khali, Pomerania',
     },
     {
       name: 'Ana Martínez',
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-woman-35s-warm-approachable-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-ana&orientation=squarish',
       rating: 5,
       text: 'Hola, nosotros hemos pedido a Laura una dieta para nuestro perro Zepi y la  verdad es que estamos muy contentos con el resultado ya que al perro se le ve mejor y la come estupendamente. La verdad es que es un descubrimiento haber dado con esta súper veterinaria que nos ha ayudado un montón. Gracias por todo Laura.',
-      dog: 'Zepi, Mestizo de 3 años',
+      dog: 'Zepi, Mestizo ',
     },
 
   ];
