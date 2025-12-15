@@ -68,11 +68,11 @@ export default function Reviews() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
-            Lo Que Dicen Nuestros Clientes
+            La experiencia de quienes ya han confiado en este proceso
           </h2>
           <div className="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            No confíes solo en nuestra palabra. Escucha lo que dicen los dueños de perros felices sobre nuestros servicios.
+            Experiencias reales de personas que confiaron en una consulta online para mejorar la salud de su perro.
           </p>
         </div>
 
