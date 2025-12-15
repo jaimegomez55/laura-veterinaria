@@ -44,7 +44,7 @@ export default function Reviews() {
       image: 'https://readdy.ai/api/search-image?query=professional-headshot-smiling-hispanic-woman-30s-friendly-warm-natural-lighting-outdoor-portrait&width=150&height=150&seq=review-maria&orientation=squarish',
       rating: 5,
       text:'Cuando a Lobo le detectaron Leishmania con afectación al riñón tan severa, nos temíamos lo peor. Hemos tenido otros perros con esta enfermedad y sabíamos a lo nos enfrentábamos. De hecho, todos los perros a los que les había pasado esto, se nos habían muerto en muy poco tiempo. Por eso decidimos hacer algo diferente. Además de tomar medicación, una alimentación adecuada a su enfermedad podría ayudar. Y tanto que ayudó!!! Lobo está recuperado prácticamente. De los 23 kilos que había perdido, ha recuperado ya 10 en unos pocos meses. Está vital y alegre. Además le encanta la comida que le preparamos. Son recetas fáciles de preparar, nada laborioso, y que puedes organizarte para varios días. No podemos estar más agradecidos con Laura.',
-      dog: 'Max, Labrador de 2 años',
+      dog: 'Lobo, Labrador de 2 años',
     },
     {
       name: 'Carlos Rodríguez',
