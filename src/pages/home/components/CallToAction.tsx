@@ -19,7 +19,9 @@ export default function CallToAction() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="https://calendly.com/laura-quintero-vet/30min"
-              className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#1e3a5f] text-white hover:bg-[#2d5a8f] font-bold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 whitespace-nowrap"
             >
               Agenda tu consulta
             
