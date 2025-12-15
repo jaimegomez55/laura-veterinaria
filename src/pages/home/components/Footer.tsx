@@ -76,20 +76,15 @@ export default function Footer() {
                 <div className="w-5 h-5 flex items-center justify-center">
                   <i className="ri-phone-fill text-lg text-[#bad7f2]"></i>
                 </div>
-                <span className="text-white/80">+34 123 456 789</span>
+                <span className="text-white/80">+34 634359766</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="w-5 h-5 flex items-center justify-center">
                   <i className="ri-mail-fill text-lg text-[#f2bac9]"></i>
                 </div>
-                <span className="text-white/80">info@dogcare.com</span>
+                <span className="text-white/80">laura.quintero.vet@gmail.com</span>
               </li>
-              <li className="flex items-center gap-3">
-                <div className="w-5 h-5 flex items-center justify-center">
-                  <i className="ri-map-pin-fill text-lg text-[#bad7f2]"></i>
-                </div>
-                <span className="text-white/80">Madrid, España</span>
-              </li>
+              
             </ul>
           </div>
 
