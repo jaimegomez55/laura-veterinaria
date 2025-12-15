@@ -90,33 +90,7 @@ export default function SuccessStories() {
       result: ' Zepi aceptó la comida casera, mejoró su pelaje y subió a un peso óptimo a la vez que podía mantener sus altas necesidades energéticas',
       duration: '16 semanas',
     },
-    {
-      name: 'Bella',
-      breed: 'Beagle',
-      image: 'https://readdy.ai/api/search-image?query=well-socialized-beagle-puppy-playing-with-other-dogs-happy-confident-outdoor-park-professional-photography&width=600&height=400&seq=success-bella&orientation=landscape',
-      challenge: 'Cachorro sin socialización adecuada',
-      solution: 'Clases de socialización de cachorros y entrenamiento temprano',
-      result: 'Bella se convirtió en una perrita sociable, amigable y bien educada que ama interactuar con otros perros y personas.',
-      duration: '6 semanas',
-    },
-    {
-      name: 'Thor',
-      breed: 'Rottweiler',
-      image: 'https://readdy.ai/api/search-image?query=well-trained-rottweiler-dog-calm-obedient-professional-outdoor-setting-confident-gentle-expression-professional-photography&width=600&height=400&seq=success-thor&orientation=landscape',
-      challenge: 'Comportamiento agresivo hacia extraños',
-      solution: 'Entrenamiento especializado en control de agresión y socialización controlada',
-      result: 'Thor ahora es un perro gentil y controlado que puede interactuar de manera segura con extraños bajo supervisión.',
-      duration: '14 semanas',
-    },
-    {
-      name: 'Coco',
-      breed: 'Bulldog Francés',
-      image: 'https://readdy.ai/api/search-image?query=happy-healthy-french-bulldog-dog-energetic-playful-outdoor-park-professional-photography-natural-lighting&width=600&height=400&seq=success-coco&orientation=landscape',
-      challenge: 'Problemas de salud y falta de ejercicio',
-      solution: 'Plan de ejercicio personalizado y rutina de paseos regulares',
-      result: 'Coco perdió peso, mejoró su salud cardiovascular y ahora tiene más energía y vitalidad que nunca.',
-      duration: '10 semanas',
-    },
+    
   ];
 
   return (
