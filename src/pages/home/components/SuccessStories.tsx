@@ -82,12 +82,12 @@ export default function SuccessStories() {
       duration: '4 semanas',
     },
     {
-      name: 'Rocky',
-      breed: 'Mestizo Rescatado',
+      name: 'Zepi',
+      breed: 'Mestizo',
       image: 'https://readdy.ai/api/search-image?query=happy-rescued-mixed-breed-dog-confident-joyful-expression-outdoor-park-heartwarming-transformation-professional-photography&width=600&height=400&seq=success-rocky&orientation=landscape',
-      challenge: 'Miedo extremo a personas y otros perros debido a abuso previo',
-      solution: 'Programa de rehabilitación personalizado con socialización gradual',
-      result: 'Rocky ahora disfruta de paseos en el parque, juega con otros perros y confía en las personas. Una transformación completa.',
+      challenge: 'Perro joven con mucha actividad que rechaza los piensos',
+      solution: 'Dieta con alta densidad energética y suplementación para cubrir sus altas necesidades',
+      result: ' Zepi aceptó la comida casera, mejoró su pelaje y subió a un peso óptimo a la vez que podía mantener sus altas necesidades energéticas',
       duration: '16 semanas',
     },
     {
