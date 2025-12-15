@@ -79,7 +79,7 @@ export default function Services() {
             Un acompañamiento nutricional pensado para tu perro
           </h2>
           <div className="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Cada perro es único, y su alimentación también debería serlo. Aquí encontrarás laa metologia con la que te acompaño paso a paso para mejorar su bienestar a través de una nutrición adaptada a su caso concreto.,
         </div>
 
