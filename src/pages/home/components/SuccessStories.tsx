@@ -74,7 +74,7 @@ export default function SuccessStories() {
     },
     {
       name: 'Khali',
-      breed: 'Pastor Alemán',
+      breed: 'Pomerania',
       image: 'https://readdy.ai/api/search-image?query=calm-confident-german-shepherd-dog-relaxed-posture-outdoor-setting-professional-photography-natural-lighting&width=600&height=400&seq=success-luna&orientation=landscape',
       challenge: 'Pancreatitis crónicas y poco peso',
       solution: 'Dieta individualizada con baja grasa y suplementación adecuada',
