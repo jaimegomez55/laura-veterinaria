@@ -64,12 +64,12 @@ const stories = [
 export default function SuccessStories() {
   const stories = [
     {
-      name: 'Max',
-      breed: 'Labrador Retriever',
+      name: 'Lobo',
+      breed: 'Pastor Aleman',
       image: 'https://readdy.ai/api/search-image?query=happy-well-trained-labrador-retriever-dog-sitting-obediently-outdoor-park-sunny-day-professional-photography&width=600&height=400&seq=success-max&orientation=landscape',
-      challenge: 'Hiperactividad y falta de obediencia básica',
-      solution: 'Programa de entrenamiento de 8 semanas enfocado en obediencia y control de impulsos',
-      result: 'Max ahora responde a todos los comandos básicos, camina perfectamente con correa y se comporta calmadamente en situaciones sociales.',
+      challenge: 'perro con Leishmaniosis con bajada de peso extrema, insuficiencia renal y no quería comer',
+      solution: 'dieta individualizada con proteína suficientemente elevada para subir de peso y se apetecible pero sin ser suficientemente elevada como para empeorar la insuficiencia renal',
+      result: 'a los pocos días Lobo estaba comiendo con apetito y con más ánimo y en sólo dos meses había subido más de 7 kg de peso, estaba más enérgico, con mejor calidad de pelo y la Leishmaniosis más controlada',
       duration: '8 semanas',
     },
     {
