@@ -1,3 +1,8 @@
+import LobiImage from '../../../Fotos/Lobi.jpeg';
+import KhaliImage from '../../../Fotos/Khali.jpeg';
+import ZepiImage from '../../../Fotos/Zepi.jpeg';
+
+
 const stories = [
   {
     title: 'From Fearful to Fearless',
@@ -66,7 +71,7 @@ export default function SuccessStories() {
     {
       name: 'Lobo',
       breed: 'Pastor Aleman',
-      image: 'https://readdy.ai/api/search-image?query=happy-well-trained-labrador-retriever-dog-sitting-obediently-outdoor-park-sunny-day-professional-photography&width=600&height=400&seq=success-max&orientation=landscape',
+      image: LobiImage,
       challenge: 'Perro con Leishmaniosis con bajada de peso extrema, insuficiencia renal y no quería comer',
       solution: 'Dieta individualizada con proteína suficientemente elevada para subir de peso y se apetecible pero sin ser suficientemente elevada como para empeorar la insuficiencia renal',
       result: 'A los pocos días Lobo estaba comiendo con apetito y con más ánimo y en sólo dos meses había subido más de 7 kg de peso, estaba más enérgico, con mejor calidad de pelo y la Leishmaniosis más controlada',
@@ -75,7 +80,7 @@ export default function SuccessStories() {
     {
       name: 'Khali',
       breed: 'Pomerania',
-      image: 'https://readdy.ai/api/search-image?query=calm-confident-german-shepherd-dog-relaxed-posture-outdoor-setting-professional-photography-natural-lighting&width=600&height=400&seq=success-luna&orientation=landscape',
+      image: KhaliImage,
       challenge: 'Pancreatitis crónicas y poco peso',
       solution: 'Dieta individualizada con baja grasa y suplementación adecuada',
       result: 'En un mes y medio ha subido de 5.7 kg a 6.3 kg y se han controlado los episodios de comer hierba y de vómitos además de mejorar la calidad del pelo',
@@ -84,7 +89,7 @@ export default function SuccessStories() {
     {
       name: 'Zepi',
       breed: 'Mestizo',
-      image: 'https://readdy.ai/api/search-image?query=happy-rescued-mixed-breed-dog-confident-joyful-expression-outdoor-park-heartwarming-transformation-professional-photography&width=600&height=400&seq=success-rocky&orientation=landscape',
+      image: ZepiImage,
       challenge: 'Perro joven con mucha actividad que rechaza los piensos',
       solution: 'Dieta con alta densidad energética y suplementación para cubrir sus altas necesidades',
       result: ' Zepi aceptó la comida casera, mejoró su pelaje y subió a un peso óptimo a la vez que podía mantener sus altas necesidades energéticas',
