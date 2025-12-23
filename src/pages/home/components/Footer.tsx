@@ -93,12 +93,12 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4">Síguenos</h3>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.linkedin.com/in/laura-quintero-veterinaria/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#f2bac9] rounded-full transition-all duration-300"
               >
-                <i className="ri-facebook-fill text-xl"></i>
+                <i className="ri-linkedin-fill text-xl"></i>
               </a>
               <a
                 href="https://www.instagram.com/laura_quintero_veterinaria/"
