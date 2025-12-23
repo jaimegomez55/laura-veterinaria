@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import Logo from '../../../Fotos/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,8 +37,12 @@ export default function Navbar() {
             duration={800}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="w-10 h-10 flex items-center justify-center">
-              <i className="ri-footprint-fill text-3xl text-[#f2bac9] group-hover:text-[#bad7f2] transition-colors"></i>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img
+                src={Logo}
+                alt="Logo Laura Quintero"
+                className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              />
             </div>
             <span className="text-2xl font-bold text-[#1e3a5f]" style={{ fontFamily: '"Pacifico", serif' }}>
               Laura Quintero

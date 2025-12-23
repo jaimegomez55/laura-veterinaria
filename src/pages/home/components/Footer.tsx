@@ -1,5 +1,6 @@
 
 import { Link } from 'react-scroll';
+import Logo from '../../../Fotos/logonegativo.png';
 
 export default function Footer() {
   return (
@@ -9,8 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center">
-                <i className="ri-footprint-fill text-3xl text-[#f2bac9]"></i>
+              <div className="w-9 h-9 flex items-center justify-center">
+                <img
+                  src={Logo}
+                  alt="Logo Laura Quintero"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="text-2xl font-bold" style={{ fontFamily: '"Pacifico", serif' }}>
                 Laura Quintero
