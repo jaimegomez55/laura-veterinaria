@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-//import VideoSection from './components/VideoSection';
+import VideoSection from './components/VideoSection';
 import About from './components/About';
 import Services from './components/Services';
 import Reviews from './components/Reviews';
@@ -13,6 +13,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
+      <VideoSection />
       <About />
       <Services />
       <Reviews />
