@@ -41,33 +41,14 @@ export default function VideoSection() {
             </div>
           </div>
 
-          {/* Video Features */}
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-[#bad7f2] rounded-full">
-                <i className="ri-heart-pulse-fill text-3xl text-[#1e3a5f]"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-[#1e3a5f] mb-2">
-                Mejora la salud con ellos
-              </h3>
-              <p className="text-[#1e3a5f]/70">
-                Alimentación natural que fortalece el sistema inmunológico
-              </p>
-            </div>
-
-            
-
-            <div className="text-center">
-              <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4 bg-[#bad7f2] rounded-full">
-                <i className="ri-emotion-happy-fill text-3xl text-[#1e3a5f]"></i>
-              </div>
-              <h3 className="text-xl font-semibold text-[#1e3a5f] mb-2">
-                Mayor felicidad
-              </h3>
-              <p className="text-[#1e3a5f]/70">
-                Perros más felices con una dieta equilibrada y sabrosa como a ellos
-              </p>
-            </div>
+          {/* CTA */}
+          <div className="flex justify-center mt-12 mb-8">
+            <a 
+              href="https://calendly.com/laura-quintero-vet/30min"
+              className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
+            >
+              Agenda tu consulta
+            </a>
           </div>
         </div>
       </div>
