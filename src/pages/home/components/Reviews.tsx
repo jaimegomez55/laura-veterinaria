@@ -108,13 +108,18 @@ export default function Reviews() {
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center mt-16">
-          <a 
-            href="https://calendly.com/laura-quintero-vet/llamada-gratuita-informacion?month=2025-12"
-            className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
-          >
-            Agenda una llamada gratuita
-          </a>
+        <div className="text-center mt-12">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+            ¿Te ves reflejado en estas experiencias? Agenda una llamada gratuita y cuéntame tu caso.
+          </p>
+          <div className="flex justify-center">
+            <a 
+              href="https://calendly.com/laura-quintero-vet/llamada-gratuita-informacion?month=2025-12"
+              className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
+            >
+              Agenda una llamada gratuita
+            </a>
+          </div>
         </div>
       </div>
     </section>

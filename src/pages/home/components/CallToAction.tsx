@@ -8,12 +8,12 @@ export default function CallToAction() {
             <i className="ri-heart-fill text-5xl text-[#f2bac9]"></i>
           </div>
           
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-            ¿Listo para transformar la vida de tu mascota?
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            No tienes que tomar decisiones solo.
           </h2>
           
           <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
-            Comienza hoy el viaje hacia un compañero más feliz, saludable. Agenda tu consulta y descubre cómo puedo ayudarte.
+            Agenda una llamada gratuita y hablamos de tu caso sin compromiso.
           </p>
 
           <div className="flex justify-center">
