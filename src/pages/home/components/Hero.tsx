@@ -1,20 +1,6 @@
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-[#bad7f2] to-[#f2bac9] overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-10 right-20 w-16 h-16 flex items-center justify-center">
-        <i className="ri-footprint-fill text-5xl text-[#1e3a5f] opacity-30"></i>
-      </div>
-      <div className="absolute top-32 right-64 w-12 h-12 flex items-center justify-center">
-        <i className="ri-arrow-right-down-line text-4xl text-[#1e3a5f] opacity-20" style={{ transform: 'rotate(-15deg)' }}></i>
-      </div>
-      <div className="absolute bottom-32 left-32 w-16 h-16 flex items-center justify-center">
-        <i className="ri-restaurant-fill text-5xl text-[#1e3a5f] opacity-20"></i>
-      </div>
-      <div className="absolute bottom-20 right-10 w-16 h-16 flex items-center justify-center">
-        <i className="ri-footprint-fill text-5xl text-[#1e3a5f] opacity-20"></i>
-      </div>
-
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

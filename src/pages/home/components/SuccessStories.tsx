@@ -123,9 +123,6 @@ export default function SuccessStories() {
                   alt={story.name}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-4 right-4 bg-[#f2bac9] text-white px-4 py-2 rounded-full font-semibold">
-                  {story.duration}
-                </div>
               </div>
               
               <div className="p-6">
