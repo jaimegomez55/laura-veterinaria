@@ -36,13 +36,6 @@ export default function About() {
              <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
              
              </p>
-            
-             <a 
-              href="https://calendly.com/laura-quintero-vet/30min"
-              className="inline-block bg-[#ff6b5a] hover:bg-[#ff5544] text-white font-semibold px-10 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer whitespace-nowrap"
-            >
-              Agenda tu consulta
-            </a>
           </div>
         </div>
       </div>
