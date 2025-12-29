@@ -32,10 +32,7 @@ export default function About() {
               Mi objetivo  <strong className="text-[#f2bac9]">es acercar la nutrición veterinaria de calidad a más animales, tutores y profesionales </strong>, ofreciendo asesoramiento individual y adaptado a las necesidades reales de cada paciente. Quiero ayudarte a que tu compañero disfrute de una vida más saludable, cómoda y equilibrada.
             </p>
 
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-             <strong className="text-[#f2bac9]">¿Quieres mejorar la salud de tu peludo a través de la alimentación?</strong> 
-             
-             </p>
+            
           </div>
         </div>
       </div>
