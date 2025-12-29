@@ -9,7 +9,7 @@ export default function Hero() {
               Te ayudo a mejorar la salud de tu perro a través de una buena alimentación
             </h1>
             <p className="text-xl text-[#1e3a5f]/80 mb-8 leading-relaxed max-w-xl">
-              Te explico paso a paso todo lo que necesitas saber para hacer el cambio, acompañándote en el proceso y resolviendo todas las dudas que puedas tener. Pincha aqui
+              Te explico paso a paso todo lo que necesitas saber para hacer el cambio, acompañándote en el proceso y resolviendo todas las dudas que puedas tener.
             </p>
           </div>
 
