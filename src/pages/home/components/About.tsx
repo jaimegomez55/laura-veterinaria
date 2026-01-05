@@ -24,7 +24,7 @@ export default function About() {
             <div className="w-20 h-1 bg-[#f2bac9] mb-8"></div>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Hola, soy <strong className="text-[#1e3a5f]">Laura Quintero</strong>, veterinaria especializada en Nutrición Clínica para perros y gatos. A lo largo de mi trayectoria he comprobado cómo una alimentación adecuada puede transformar la calidad de vida de los animales, tanto en pacientes sanos como en aquellos que conviven con distintas patologías.
+              Hola, soy <strong className="text-[#1e3a5f]">Laura Quintero</strong>, veterinaria especializada en Nutrición Clínica para perros y gatos. A lo largo de mi trayectoria he comprobado como una alimentación adecuada puede transformar la calidad de vida de los animales, tanto en pacientes sanos como en aquellos que conviven con distintas patologías.
 
             </p>
 
