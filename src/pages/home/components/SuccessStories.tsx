@@ -73,7 +73,7 @@ export default function SuccessStories() {
       breed: 'Pastor Aleman',
       image: LobiImage,
       challenge: 'Perro con Leishmaniosis con bajada de peso extrema, insuficiencia renal y no quería comer',
-      solution: 'Dieta individualizada con proteína suficientemente elevada para subir de peso y se apetecible pero sin ser suficientemente elevada como para empeorar la insuficiencia renal',
+      solution: 'Dieta individualizada con proteína suficientemente elevada para subir de peso y sea apetecible pero sin ser suficientemente elevada como para empeorar la insuficiencia renal',
       result: 'A los pocos días Lobo estaba comiendo con apetito y con más ánimo y en sólo dos meses había subido más de 7 kg de peso, estaba más enérgico, con mejor calidad de pelo y la Leishmaniosis más controlada',
       duration: '8 semanas',
     },
