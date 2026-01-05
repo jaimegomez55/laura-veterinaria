@@ -107,7 +107,7 @@ export default function SuccessStories() {
           </h2>
           <div className="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Cada perro tiene una historia única. Aquí hay algunas transformaciones increíbles que hemos tenido el privilegio de ser parte.
+            Cada perro tiene una historia única. Aquí hay algunas transformaciones increíbles de las que hemos tenido el privilegio de formar parte.
           </p>
         </div>
 
