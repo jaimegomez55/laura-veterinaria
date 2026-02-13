@@ -69,7 +69,9 @@ export default defineConfig({
   build: {
     sourcemap: true,
     outDir: "out",
+    emptyOutDir: true,
   },
+  publicDir: "public",
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
