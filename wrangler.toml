@@ -4,3 +4,5 @@ compatibility_date = "2025-11-22"
 [assets]
 directory = "./out"
 
+main = "functions/_worker.js"
+
