@@ -110,7 +110,7 @@ export default function CalculatorPage() {
           {/* Header */}
           <div className="text-center mb-10">
             <div className="text-4xl mb-4">🐾</div>
-            <h1 className="text-3xl md:text-4xl font-bold text-[#2D5F4C] mb-4 font-['Montserrat']">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mb-4 font-['Montserrat']">
               Calculadora de Materia Seca
             </h1>
             <p className="text-[#3D7A5F] font-['Merriweather']">
@@ -119,7 +119,7 @@ export default function CalculatorPage() {
           </div>
 
           {/* Educational Info */}
-          <div className="bg-[#2D5F4C] text-white p-6 rounded-2xl mb-8 shadow-lg">
+          <div className="bg-[#1e3a5f] text-white p-6 rounded-2xl mb-8 shadow-lg">
             <p className="font-['Merriweather'] leading-relaxed">
               <span className="font-bold">¿Sabías que...</span> el porcentaje de grasa que ves en la etiqueta incluye el agua?
               Para saber cuánta grasa <span className="underline decoration-[#E89F4F] decoration-2 underline-offset-2">REALMENTE</span> consume tu perro, necesitas calcular en materia seca.
@@ -130,28 +130,28 @@ export default function CalculatorPage() {
             {/* Inputs */}
             <div className="space-y-6 mb-8">
               <div>
-                <label className="block text-sm font-bold text-[#2D5F4C] mb-2 uppercase tracking-wide">
+                <label className="block text-sm font-bold text-[#1e3a5f] mb-2 uppercase tracking-wide">
                   Porcentaje de grasa (Etiqueta)
                 </label>
                 <input
                   type="number"
                   value={fat}
                   onChange={(e) => setFat(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-[#E8E4DD] focus:border-[#2D5F4C] focus:ring-0 outline-none transition-all text-lg font-['Merriweather'] text-[#2D5F4C]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-[#E8E4DD] focus:border-[#1e3a5f] focus:ring-0 outline-none transition-all text-lg font-['Merriweather'] text-[#1e3a5f]"
                   placeholder="Ej: 12"
                   min="0"
                   max="100"
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-[#2D5F4C] mb-2 uppercase tracking-wide">
+                <label className="block text-sm font-bold text-[#1e3a5f] mb-2 uppercase tracking-wide">
                   Porcentaje de humedad (Etiqueta)
                 </label>
                 <input
                   type="number"
                   value={moisture}
                   onChange={(e) => setMoisture(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl border-2 border-[#E8E4DD] focus:border-[#2D5F4C] focus:ring-0 outline-none transition-all text-lg font-['Merriweather'] text-[#2D5F4C]"
+                  className="w-full px-4 py-4 rounded-xl border-2 border-[#E8E4DD] focus:border-[#1e3a5f] focus:ring-0 outline-none transition-all text-lg font-['Merriweather'] text-[#1e3a5f]"
                   placeholder="Ej: 68"
                   min="0"
                   max="100"
@@ -180,14 +180,14 @@ export default function CalculatorPage() {
                 <div className="animate-fade-in space-y-8">
 
                   {/* Main Result Card */}
-                  <div className="bg-[#2D5F4C] text-white p-8 rounded-2xl text-center shadow-inner">
+                  <div className="bg-[#1e3a5f] text-white p-8 rounded-2xl text-center shadow-inner">
                     <p className="text-white/80 text-sm mb-2 uppercase tracking-wider">Grasa en materia seca</p>
                     <p className="text-6xl font-bold font-['Montserrat'] mb-2">{result}%</p>
                     <p className="text-white/90 font-['Merriweather'] text-sm">Esto es lo que tu perro REALMENTE consume</p>
                   </div>
 
                   {/* Comparison */}
-                  <div className="flex items-center justify-center gap-4 text-[#2D5F4C] bg-[#F8F6F3] p-4 rounded-xl">
+                  <div className="flex items-center justify-center gap-4 text-[#1e3a5f] bg-[#F8F6F3] p-4 rounded-xl">
                     <div className="text-center">
                       <p className="text-xs uppercase text-gray-500 mb-1">En la etiqueta</p>
                       <p className="text-xl font-bold">{fat}%</p>
@@ -206,8 +206,8 @@ export default function CalculatorPage() {
                   </div>
 
                   {/* Detailed Explanation */}
-                  <div className="bg-[#F8F6F3] p-6 rounded-xl border-l-4 border-[#2D5F4C]">
-                    <p className="text-[#2D5F4C] font-['Merriweather'] leading-relaxed">
+                  <div className="bg-[#F8F6F3] p-6 rounded-xl border-l-4 border-[#1e3a5f]">
+                    <p className="text-[#1e3a5f] font-['Merriweather'] leading-relaxed">
                       {data.desc}
                     </p>
                   </div>
@@ -234,14 +234,14 @@ export default function CalculatorPage() {
 
                     <button
                       onClick={shareResult}
-                      className="bg-white hover:bg-gray-50 text-[#2D5F4C] border-2 border-[#2D5F4C] font-bold py-3 px-6 rounded-xl text-center transition-colors flex items-center justify-center gap-2"
+                      className="bg-white hover:bg-gray-50 text-[#1e3a5f] border-2 border-[#1e3a5f] font-bold py-3 px-6 rounded-xl text-center transition-colors flex items-center justify-center gap-2"
                     >
                       <i className="ri-share-line text-xl"></i> Compartir
                     </button>
 
                     <button
                       onClick={resetCalculator}
-                      className="col-span-1 md:col-span-2 text-gray-400 hover:text-[#2D5F4C] font-medium py-2 text-sm transition-colors flex items-center justify-center gap-1 mt-2"
+                      className="col-span-1 md:col-span-2 text-gray-400 hover:text-[#1e3a5f] font-medium py-2 text-sm transition-colors flex items-center justify-center gap-1 mt-2"
                     >
                       <i className="ri-refresh-line"></i> Hacer otro cálculo
                     </button>
