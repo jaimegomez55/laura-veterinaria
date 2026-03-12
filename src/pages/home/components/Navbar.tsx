@@ -22,6 +22,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Sobre Mí', to: 'about', type: 'scroll' },
     { name: 'Servicios', to: 'services', type: 'scroll' },
+    { name: 'Deriva un caso', to: '/deriva-un-caso', type: 'route' },
     { name: 'Calculadora Materia Seca', to: '/calculadora', type: 'route' },
     { name: 'Reseñas', to: 'reviews', type: 'scroll' },
     { name: 'Historias de Éxito', to: 'success-stories', type: 'scroll' },

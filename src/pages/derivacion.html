@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deriva un caso | Laura Quintero Veterinaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --rosa:       #F28BAA;
+      --rosa-light: #fce8ef;
+      --lavanda:    #c8c6e8;
+      --lavanda-bg: #f0eff8;
+      --navy:       #1e2d4a;
+      --navy-light: #3a4f6e;
+      --blanco:     #ffffff;
+      --gris-texto: #5a6474;
+      --borde:      #e8e4f0;
+      --error:      #e05c5c;
+      --exito:      #4caf88;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanco);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── NAV (simulado para encajar con la web) ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: white;
+      border-bottom: 1px solid var(--borde);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-size: 0.875rem;
+      color: var(--rosa);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: opacity .2s;
+    }
+    .nav-back:hover { opacity: .7; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--lavanda-bg) 0%, var(--rosa-light) 100%);
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(242,139,170,.12);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(200,198,232,.2);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: white;
+      color: var(--rosa);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 12px rgba(242,139,170,.2);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--navy);
+      line-height: 1.25;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: var(--gris-texto);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: center;
+    }
+    .pill {
+      background: white;
+      border: 1.5px solid var(--borde);
+      border-radius: 100px;
+      padding: .35rem .9rem;
+      font-size: .82rem;
+      color: var(--navy-light);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .pill span { font-size: 1rem; }
+
+    /* ── LAYOUT ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── BLOQUES DEL FORMULARIO ── */
+    .form-block {
+      background: white;
+      border: 1.5px solid var(--borde);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      animation: fadeUp .5s ease both;
+    }
+    .form-block:nth-child(2) { animation-delay: .05s; }
+    .form-block:nth-child(3) { animation-delay: .1s; }
+    .form-block:nth-child(4) { animation-delay: .15s; }
+    .form-block:nth-child(5) { animation-delay: .2s; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(16px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1.5px solid var(--borde);
+    }
+    .block-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--rosa-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .block-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+    .block-subtitle {
+      font-size: .8rem;
+      color: var(--gris-texto);
+      margin-top: .15rem;
+    }
+
+    /* ── GRID DE CAMPOS ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .col-full { grid-column: 1 / -1; }
+
+    @media (max-width: 580px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+
+    /* ── CAMPOS ── */
+    .field { display: flex; flex-direction: column; gap: .4rem; }
+    label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: .02em;
+    }
+    label .opt {
+      font-weight: 400;
+      color: var(--gris-texto);
+      font-size: .78rem;
+      margin-left: .3rem;
+    }
+    input, select, textarea {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .92rem;
+      color: var(--navy);
+      background: var(--lavanda-bg);
+      border: 1.5px solid var(--borde);
+      border-radius: 10px;
+      padding: .7rem 1rem;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+      outline: none;
+      width: 100%;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--rosa);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(242,139,170,.15);
+    }
+    input.error, select.error, textarea.error {
+      border-color: var(--error);
+    }
+    textarea { resize: vertical; min-height: 90px; }
+    select { cursor: pointer; }
+    .field-hint {
+      font-size: .75rem;
+      color: var(--gris-texto);
+      line-height: 1.4;
+    }
+    .field-error {
+      font-size: .75rem;
+      color: var(--error);
+      display: none;
+    }
+    .field-error.visible { display: block; }
+
+    /* ── UPLOAD ── */
+    .upload-zone {
+      border: 2px dashed var(--lavanda);
+      border-radius: 12px;
+      padding: 1.8rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      position: relative;
+      background: var(--lavanda-bg);
+    }
+    .upload-zone:hover, .upload-zone.dragover {
+      border-color: var(--rosa);
+      background: var(--rosa-light);
+    }
+    .upload-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+    .upload-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .upload-text { font-size: .9rem; color: var(--navy); font-weight: 500; }
+    .upload-sub  { font-size: .78rem; color: var(--gris-texto); margin-top: .25rem; }
+    .file-list   { margin-top: 1rem; display: flex; flex-direction: column; gap: .5rem; }
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1.5px solid var(--borde);
+      border-radius: 8px;
+      padding: .5rem .75rem;
+      font-size: .82rem;
+      color: var(--navy);
+    }
+    .file-item-name { display: flex; align-items: center; gap: .5rem; flex: 1; min-width: 0; }
+    .file-item-name span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-remove {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gris-texto);
+      font-size: 1rem;
+      padding: 0 .25rem;
+      line-height: 1;
+      transition: color .2s;
+      flex-shrink: 0;
+    }
+    .file-remove:hover { color: var(--error); }
+    .upload-error {
+      font-size: .78rem;
+      color: var(--error);
+      margin-top: .4rem;
+      display: none;
+    }
+    .upload-error.visible { display: block; }
+
+    /* ── RGPD ── */
+    .rgpd-box {
+      background: var(--lavanda-bg);
+      border: 1.5px solid var(--borde);
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      margin-top: .5rem;
+    }
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+    }
+    .checkbox-row input[type="checkbox"] {
+      width: 18px; height: 18px;
+      min-width: 18px;
+      margin-top: .1rem;
+      accent-color: var(--rosa);
+      cursor: pointer;
+      background: white;
+      padding: 0;
+      border-radius: 4px;
+    }
+    .checkbox-label {
+      font-size: .83rem;
+      color: var(--gris-texto);
+      line-height: 1.5;
+    }
+    .checkbox-label a {
+      color: var(--rosa);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .checkbox-label a:hover { text-decoration: underline; }
+    .rgpd-note {
+      font-size: .75rem;
+      color: var(--gris-texto);
+      margin-top: .75rem;
+      padding-top: .75rem;
+      border-top: 1px solid var(--borde);
+      line-height: 1.5;
+    }
+
+    /* ── BOTÓN ENVIAR ── */
+    .btn-submit {
+      width: 100%;
+      background: var(--rosa);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem 2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(242,139,170,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+    }
+    .btn-submit:hover {
+      background: #e0708e;
+      box-shadow: 0 6px 24px rgba(242,139,170,.5);
+      transform: translateY(-1px);
+    }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit:disabled {
+      background: #d0c8d8;
+      box-shadow: none;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ── LOADING SPINNER ── */
+    .spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,.4);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── SUCCESS / ERROR STATES ── */
+    .msg-box {
+      border-radius: 14px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      display: none;
+      animation: fadeUp .4s ease;
+    }
+    .msg-box.success {
+      background: #edfaf4;
+      border: 1.5px solid #9fe0c3;
+    }
+    .msg-box.fail {
+      background: #fef0f0;
+      border: 1.5px solid #f5bcbc;
+    }
+    .msg-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+    .msg-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: .5rem;
+    }
+    .msg-text { font-size: .9rem; color: var(--gris-texto); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Laura Quintero</a>
+    <a href="/" class="nav-back">← Volver a la web</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">Para veterinarios</div>
+    <h1>Deriva un caso de nutrición</h1>
+    <p>Envíame los datos del paciente y te respondo en menos de 48h con una valoración nutricional personalizada.</p>
+    <div class="hero-pills">
+      <div class="pill"><span>📋</span> Respuesta en 48h</div>
+      <div class="pill"><span>🔒</span> Datos protegidos</div>
+      <div class="pill"><span>📎</span> Adjunta analíticas</div>
+      <div class="pill"><span>🐾</span> Perros y gatos</div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- SUCCESS -->
+    <div class="msg-box success" id="msgSuccess">
+      <div class="msg-icon">✅</div>
+      <div class="msg-title">Caso recibido correctamente</div>
+      <div class="msg-text">He recibido los datos del paciente y te contactaré en menos de 48h.<br>Si tienes cualquier duda urgente, escríbeme directamente por WhatsApp.</div>
+    </div>
+
+    <!-- ERROR -->
+    <div class="msg-box fail" id="msgError">
+      <div class="msg-icon">⚠️</div>
+      <div class="msg-title">Algo no ha ido bien</div>
+      <div class="msg-text">Ha habido un problema al enviar el formulario. Por favor, inténtalo de nuevo o contáctame directamente por WhatsApp.</div>
+    </div>
+
+    <form id="derivacionForm" novalidate>
+
+      <!-- BLOQUE 1: Centro remisor -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">🏥</div>
+          <div>
+            <div class="block-title">Centro remisor</div>
+            <div class="block-subtitle">Datos del veterinario que deriva el caso</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="clinica">Nombre de la clínica</label>
+            <input type="text" id="clinica" name="clinica" placeholder="Clínica Veterinaria..." required />
+            <span class="field-error" id="err-clinica">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="veterinario">Veterinario remisor</label>
+            <input type="text" id="veterinario" name="veterinario" placeholder="Nombre y apellidos" required />
+            <span class="field-error" id="err-veterinario">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="email">Email de contacto</label>
+            <input type="email" id="email" name="email" placeholder="correo@clinica.com" required />
+            <span class="field-error" id="err-email">Introduce un email válido</span>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono <span class="opt">(opcional)</span></label>
+            <input type="tel" id="telefono" name="telefono" placeholder="600 000 000" />
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE 2: Tutor -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">👤</div>
+          <div>
+            <div class="block-title">Datos del tutor</div>
+            <div class="block-subtitle">Propietario del paciente</div>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field">
+            <label for="tutor">Nombre y apellidos</label>
+            <input type="text" id="tutor" name="tutor" placeholder="Nombre completo" required />
+            <span class="field-error" id="err-tutor">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="tutor_telefono">Teléfono de contacto</label>
+            <input type="tel" id="tutor_telefono" name="tutor_telefono" placeholder="600 000 000" required />
+            <span class="field-error" id="err-tutor_telefono">Campo obligatorio</span>
+          </div>
+          <div class="field col-full">
+            <label for="tutor_email">Email del tutor <span class="opt">(opcional)</span></label>
+            <input type="email" id="tutor_email" name="tutor_email" placeholder="tutor@email.com" />
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE 3: Paciente -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">🐾</div>
+          <div>
+            <div class="block-title">Paciente</div>
+            <div class="block-subtitle">Datos de la mascota</div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="field">
+            <label for="nombre_mascota">Nombre</label>
+            <input type="text" id="nombre_mascota" name="nombre_mascota" placeholder="Nombre de la mascota" required />
+            <span class="field-error" id="err-nombre_mascota">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="especie">Especie</label>
+            <select id="especie" name="especie" required>
+              <option value="">Seleccionar...</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+            </select>
+            <span class="field-error" id="err-especie">Selecciona una especie</span>
+          </div>
+          <div class="field">
+            <label for="raza">Raza</label>
+            <input type="text" id="raza" name="raza" placeholder="Raza" required />
+            <span class="field-error" id="err-raza">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" name="peso" placeholder="Ej: 8.5" step="0.1" min="0" required />
+            <span class="field-error" id="err-peso">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="edad">Edad</label>
+            <input type="text" id="edad" name="edad" placeholder="Ej: 3 años" required />
+            <span class="field-error" id="err-edad">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="sexo">Sexo <span class="opt">(opcional)</span></label>
+            <select id="sexo" name="sexo">
+              <option value="">Seleccionar...</option>
+              <option value="Macho entero">Macho entero</option>
+              <option value="Macho castrado">Macho castrado</option>
+              <option value="Hembra entera">Hembra entera</option>
+              <option value="Hembra esterilizada">Hembra esterilizada</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE 4: Información clínica -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">📋</div>
+          <div>
+            <div class="block-title">Información clínica</div>
+            <div class="block-subtitle">Motivo de derivación y contexto del caso</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="field">
+            <label for="motivo">Motivo de remisión</label>
+            <textarea id="motivo" name="motivo" placeholder="¿Cómo puede ayudar la nutrición en este caso? Describe el motivo principal de la derivación..." required></textarea>
+            <span class="field-error" id="err-motivo">Campo obligatorio</span>
+          </div>
+          <div class="field">
+            <label for="pruebas">Pruebas realizadas <span class="opt">(opcional)</span></label>
+            <textarea id="pruebas" name="pruebas" placeholder="Analíticas, ecografías, radiografías u otras pruebas realizadas..."></textarea>
+          </div>
+          <div class="field">
+            <label for="tratamientos">Tratamientos administrados <span class="opt">(opcional)</span></label>
+            <textarea id="tratamientos" name="tratamientos" placeholder="Medicación actual, suplementos, dieta en curso..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOQUE 5: Adjuntos -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">📎</div>
+          <div>
+            <div class="block-title">Documentación adjunta</div>
+            <div class="block-subtitle">Analíticas, ecografías, informes — PDF o imágenes</div>
+          </div>
+        </div>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="archivos" name="archivos" multiple accept=".pdf,.jpg,.jpeg,.png" />
+          <div class="upload-icon">📂</div>
+          <div class="upload-text">Arrastra los archivos aquí o haz clic para seleccionar</div>
+          <div class="upload-sub">PDF, JPG, PNG · Máximo 10 MB por archivo · Hasta 5 archivos</div>
+        </div>
+        <div class="upload-error" id="uploadError"></div>
+        <div class="file-list" id="fileList"></div>
+        <p class="field-hint" style="margin-top:.75rem;">Si tienes más documentación, puedes compartirla por WeTransfer e incluir el enlace en el campo de pruebas realizadas.</p>
+      </div>
+
+      <!-- RGPD -->
+      <div class="form-block">
+        <div class="block-header">
+          <div class="block-icon">🔒</div>
+          <div>
+            <div class="block-title">Protección de datos</div>
+            <div class="block-subtitle">Necesario antes de enviar</div>
+          </div>
+        </div>
+        <div class="rgpd-box">
+          <div class="checkbox-row">
+            <input type="checkbox" id="rgpd" name="rgpd" required />
+            <label class="checkbox-label" for="rgpd">
+              He informado al propietario de que sus datos y los de su mascota serán compartidos con Laura Quintero para recibir asesoramiento nutricional. Acepto la <a href="/politica-de-privacidad" target="_blank">política de privacidad</a>.
+            </label>
+          </div>
+          <div class="rgpd-note">
+            Los datos personales del tutor y del paciente se tratarán de acuerdo con el RGPD y solo se utilizarán para la valoración nutricional solicitada. No se compartirán con terceros.
+          </div>
+        </div>
+        <span class="field-error" id="err-rgpd" style="margin-top:.5rem;">Debes aceptar antes de enviar</span>
+      </div>
+
+      <button type="submit" class="btn-submit" id="btnSubmit">
+        <div class="spinner" id="spinner"></div>
+        <span id="btnText">Enviar caso 🐾</span>
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    // ── CONFIGURACIÓN ──────────────────────────────
+    // Sustituye esta URL por tu endpoint de Formspree cuando lo tengas
+    const FORMSPREE_URL = 'https://formspree.io/f/TU_ID_AQUI';
+
+    const MAX_FILE_SIZE  = 10 * 1024 * 1024; // 10 MB
+    const MAX_FILES      = 5;
+    const ALLOWED_TYPES  = ['application/pdf', 'image/jpeg', 'image/png'];
+    const ALLOWED_EXT    = ['.pdf', '.jpg', '.jpeg', '.png'];
+
+    // ── ESTADO ────────────────────────────────────
+    let selectedFiles = [];
+
+    // ── UPLOAD ────────────────────────────────────
+    const uploadZone = document.getElementById('uploadZone');
+    const fileInput  = document.getElementById('archivos');
+    const fileList   = document.getElementById('fileList');
+    const uploadErr  = document.getElementById('uploadError');
+
+    uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+    uploadZone.addEventListener('dragleave', ()  => uploadZone.classList.remove('dragover'));
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadZone.classList.remove('dragover');
+      handleFiles(Array.from(e.dataTransfer.files));
+    });
+    fileInput.addEventListener('change', () => {
+      handleFiles(Array.from(fileInput.files));
+      fileInput.value = '';
+    });
+
+    function handleFiles(files) {
+      uploadErr.classList.remove('visible');
+      for (const f of files) {
+        if (selectedFiles.length >= MAX_FILES) {
+          showUploadError(`Máximo ${MAX_FILES} archivos permitidos.`); break;
+        }
+        const ext = '.' + f.name.split('.').pop().toLowerCase();
+        if (!ALLOWED_EXT.includes(ext)) {
+          showUploadError(`"${f.name}" no es un formato permitido. Solo PDF, JPG o PNG.`); continue;
+        }
+        if (f.size > MAX_FILE_SIZE) {
+          showUploadError(`"${f.name}" supera el límite de 10 MB.`); continue;
+        }
+        if (selectedFiles.find(sf => sf.name === f.name && sf.size === f.size)) continue;
+        selectedFiles.push(f);
+      }
+      renderFileList();
+    }
+
+    function showUploadError(msg) {
+      uploadErr.textContent = msg;
+      uploadErr.classList.add('visible');
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = '';
+      selectedFiles.forEach((f, i) => {
+        const icon = f.type === 'application/pdf' ? '📄' : '🖼️';
+        const size = f.size < 1024*1024 ? (f.size/1024).toFixed(0)+' KB' : (f.size/1024/1024).toFixed(1)+' MB';
+        const item = document.createElement('div');
+        item.className = 'file-item';
+        item.innerHTML = `
+          <div class="file-item-name">${icon} <span>${f.name}</span></div>
+          <span style="font-size:.75rem;color:var(--gris-texto);margin:0 .75rem;">${size}</span>
+          <button type="button" class="file-remove" title="Eliminar">✕</button>`;
+        item.querySelector('.file-remove').addEventListener('click', () => {
+          selectedFiles.splice(i, 1);
+          renderFileList();
+        });
+        fileList.appendChild(item);
+      });
+    }
+
+    // ── VALIDACIÓN ────────────────────────────────
+    const requiredFields = ['clinica','veterinario','email','tutor','tutor_telefono','nombre_mascota','especie','raza','peso','edad','motivo'];
+
+    function validateField(id) {
+      const el  = document.getElementById(id);
+      const err = document.getElementById('err-' + id);
+      let valid = true;
+      if (id === 'email') {
+        valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      } else if (id === 'especie') {
+        valid = el.value !== '';
+      } else {
+        valid = el.value.trim() !== '';
+      }
+      el.classList.toggle('error', !valid);
+      if (err) err.classList.toggle('visible', !valid);
+      return valid;
+    }
+
+    requiredFields.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('blur', () => validateField(id));
+    });
+
+    // ── ENVÍO ─────────────────────────────────────
+    document.getElementById('derivacionForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Validar todos los campos
+      let allValid = true;
+      requiredFields.forEach(id => { if (!validateField(id)) allValid = false; });
+
+      // Validar RGPD
+      const rgpd = document.getElementById('rgpd');
+      const rgpdErr = document.getElementById('err-rgpd');
+      if (!rgpd.checked) {
+        rgpdErr.classList.add('visible');
+        allValid = false;
+      } else {
+        rgpdErr.classList.remove('visible');
+      }
+
+      if (!allValid) {
+        document.querySelector('.error, input.error, select.error, textarea.error')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // UI: loading
+      const btn     = document.getElementById('btnSubmit');
+      const spinner = document.getElementById('spinner');
+      const btnText = document.getElementById('btnText');
+      btn.disabled = true;
+      spinner.style.display = 'block';
+      btnText.textContent = 'Enviando...';
+
+      // Construir FormData
+      const fd = new FormData();
+      requiredFields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) fd.append(id, el.value.trim());
+      });
+      ['telefono','tutor_email','sexo','pruebas','tratamientos'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.value.trim()) fd.append(id, el.value.trim());
+      });
+      selectedFiles.forEach(f => fd.append('archivos', f));
+
+      try {
+        const res = await fetch(FORMSPREE_URL, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          document.getElementById('derivacionForm').style.display = 'none';
+          document.getElementById('msgSuccess').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error('Error en el servidor');
+        }
+      } catch {
+        document.getElementById('msgError').style.display = 'block';
+        document.getElementById('msgError').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        btn.disabled = false;
+        spinner.style.display = 'none';
+        btnText.textContent = 'Enviar caso 🐾';
+      }
+    });
+  </script>
+</body>
+</html>
