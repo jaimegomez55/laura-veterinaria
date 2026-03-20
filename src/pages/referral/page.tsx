@@ -201,7 +201,7 @@ export default function ReferralPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre de la clínica</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre de la clínica<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="clinica"
@@ -211,7 +211,7 @@ export default function ReferralPage() {
                     {formErrors.clinica && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Veterinario remisor</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Veterinario remisor<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="veterinario"
@@ -221,7 +221,7 @@ export default function ReferralPage() {
                     {formErrors.veterinario && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Email de contacto</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Email de contacto<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="email"
                       name="email"
@@ -254,7 +254,7 @@ export default function ReferralPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre y apellidos</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre y apellidos<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="tutor"
@@ -264,7 +264,7 @@ export default function ReferralPage() {
                     {formErrors.tutor && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Teléfono de contacto</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Teléfono de contacto<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="tel"
                       name="tutor_telefono"
@@ -297,7 +297,7 @@ export default function ReferralPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="nombre_mascota"
@@ -307,7 +307,7 @@ export default function ReferralPage() {
                     {formErrors.nombre_mascota && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Especie</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Especie<span className="text-red-500 text-xs ml-1">*</span></label>
                     <select
                       name="especie"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none cursor-pointer transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.especie ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
@@ -319,7 +319,7 @@ export default function ReferralPage() {
                     {formErrors.especie && <span className="text-sm text-red-500 font-['Merriweather'] italic">Selecciona una</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Raza</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Raza<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="raza"
@@ -329,7 +329,7 @@ export default function ReferralPage() {
                     {formErrors.raza && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Peso (kg)</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Peso (kg)<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="number"
                       name="peso"
@@ -341,7 +341,7 @@ export default function ReferralPage() {
                     {formErrors.peso && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Edad</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Edad<span className="text-red-500 text-xs ml-1">*</span></label>
                     <input
                       type="text"
                       name="edad"
@@ -378,7 +378,7 @@ export default function ReferralPage() {
 
                 <div className="space-y-8">
                   <div className="flex flex-col gap-3">
-                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Motivo de remisión</label>
+                    <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Motivo de remisión<span className="text-red-500 text-xs ml-1">*</span></label>
                     <textarea
                       name="motivo"
                       rows={4}
