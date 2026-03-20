@@ -118,10 +118,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/60">
+        <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-white/60 text-sm">
             © {new Date().getFullYear()} Laura Quintero. Todos los derechos reservados.
           </p>
+          <div className="flex gap-6">
+            <a href="/politica-de-privacidad" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Política de Privacidad
+            </a>
+            <a href="/politica-de-cookies" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Política de Cookies
+            </a>
+          </div>
         </div>
       </div>
     </footer>

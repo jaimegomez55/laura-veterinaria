@@ -14,14 +14,14 @@ export default function ReferralPage() {
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, boolean>>({});
   const [dragActive, setDragActive] = useState(false);
-  
+
   const formRef = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFiles = (files: File[]) => {
     setUploadError(null);
     let newFiles = [...selectedFiles];
-    
+
     for (const f of files) {
       if (newFiles.length >= MAX_FILES) {
         setUploadError(`Máximo ${MAX_FILES} archivos permitidos.`);
@@ -82,7 +82,7 @@ export default function ReferralPage() {
 
     setIsSubmitting(true);
     const formData = new FormData(formRef.current!);
-    
+
     // Add selected files manually if they are not in the FormData from the native input
     // In our case they are managed by state
     selectedFiles.forEach(file => {
@@ -148,7 +148,7 @@ export default function ReferralPage() {
           <p className="text-xl text-[#1e3a5f]/80 max-w-2xl mx-auto mb-10 leading-relaxed font-['Merriweather']">
             Envíame los datos del paciente y te respondo en menos de 48h con una valoración nutricional personalizada.
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             {['📋 Respuesta en 48h', '🔒 Datos protegidos', '📎 Adjunta analíticas', '🐾 Perros y gatos'].map(pill => (
               <span key={pill} className="bg-white border border-[#E8E4DD] text-[#1e3a5f] text-sm font-medium px-4 py-2 rounded-full shadow-sm flex items-center gap-2">
@@ -168,7 +168,7 @@ export default function ReferralPage() {
               He recibido los datos del paciente y te contactaré en menos de 48h.<br />
               Si tienes cualquier duda urgente, puedes escribirme directamente por WhatsApp.
             </p>
-            <button 
+            <button
               onClick={() => setSubmitStatus('idle')}
               className="bg-[#f2bac9] hover:bg-[#eb9eb2] text-white font-bold px-8 py-4 rounded-2xl shadow-lg transition-all"
             >
@@ -188,7 +188,7 @@ export default function ReferralPage() {
             )}
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-10" noValidate>
-              
+
               {/* Bloque 1: Centro remisor */}
               <div className="bg-white border-2 border-[#E8E4DD] rounded-3xl p-6 md:p-10 shadow-xl">
                 <div className="flex items-center gap-4 mb-8 pb-6 border-b border-[#E8E4DD]">
@@ -198,44 +198,44 @@ export default function ReferralPage() {
                     <p className="text-base text-[#3D7A5F] font-['Merriweather']">Datos del veterinario que deriva el caso</p>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre de la clínica</label>
-                    <input 
-                      type="text" 
-                      name="clinica" 
-                      placeholder="Clínica Veterinaria..." 
+                    <input
+                      type="text"
+                      name="clinica"
+                      placeholder="Clínica Veterinaria..."
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.clinica ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.clinica && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Veterinario remisor</label>
-                    <input 
-                      type="text" 
-                      name="veterinario" 
-                      placeholder="Nombre y apellidos" 
+                    <input
+                      type="text"
+                      name="veterinario"
+                      placeholder="Nombre y apellidos"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.veterinario ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.veterinario && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Email de contacto</label>
-                    <input 
-                      type="email" 
-                      name="email" 
-                      placeholder="correo@clinica.com" 
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="correo@clinica.com"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.email ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.email && <span className="text-sm text-red-500 font-['Merriweather'] italic">Introduce un email válido</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Teléfono <span className="font-normal text-gray-400 capitalize ml-1 text-xs">(opcional)</span></label>
-                    <input 
-                      type="tel" 
-                      name="telefono" 
-                      placeholder="600 000 000" 
+                    <input
+                      type="tel"
+                      name="telefono"
+                      placeholder="600 000 000"
                       className="w-full bg-white border-2 border-[#E8E4DD] rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f]"
                     />
                   </div>
@@ -251,34 +251,34 @@ export default function ReferralPage() {
                     <p className="text-base text-[#3D7A5F] font-['Merriweather']">Propietario del paciente</p>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre y apellidos</label>
-                    <input 
-                      type="text" 
-                      name="tutor" 
-                      placeholder="Nombre completo" 
+                    <input
+                      type="text"
+                      name="tutor"
+                      placeholder="Nombre completo"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.tutor ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.tutor && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Teléfono de contacto</label>
-                    <input 
-                      type="tel" 
-                      name="tutor_telefono" 
-                      placeholder="600 000 000" 
+                    <input
+                      type="tel"
+                      name="tutor_telefono"
+                      placeholder="600 000 000"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.tutor_telefono ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.tutor_telefono && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3 md:col-span-2">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Email del tutor <span className="font-normal text-gray-400 capitalize ml-1 text-xs">(opcional)</span></label>
-                    <input 
-                      type="email" 
-                      name="tutor_email" 
-                      placeholder="tutor@email.com" 
+                    <input
+                      type="email"
+                      name="tutor_email"
+                      placeholder="tutor@email.com"
                       className="w-full bg-white border-2 border-[#E8E4DD] rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f]"
                     />
                   </div>
@@ -294,22 +294,22 @@ export default function ReferralPage() {
                     <p className="text-base text-[#3D7A5F] font-['Merriweather']">Datos de la mascota</p>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Nombre</label>
-                    <input 
-                      type="text" 
-                      name="nombre_mascota" 
-                      placeholder="Nombre de la mascota" 
+                    <input
+                      type="text"
+                      name="nombre_mascota"
+                      placeholder="Nombre de la mascota"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.nombre_mascota ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.nombre_mascota && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Especie</label>
-                    <select 
-                      name="especie" 
+                    <select
+                      name="especie"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none cursor-pointer transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.especie ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     >
                       <option value="">Seleccionar...</option>
@@ -320,21 +320,21 @@ export default function ReferralPage() {
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Raza</label>
-                    <input 
-                      type="text" 
-                      name="raza" 
-                      placeholder="Raza" 
+                    <input
+                      type="text"
+                      name="raza"
+                      placeholder="Raza"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.raza ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.raza && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Peso (kg)</label>
-                    <input 
-                      type="number" 
-                      name="peso" 
-                      placeholder="Ej: 8.5" 
-                      step="0.1" 
+                    <input
+                      type="number"
+                      name="peso"
+                      placeholder="Ej: 8.5"
+                      step="0.1"
                       min="0"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.peso ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
@@ -342,18 +342,18 @@ export default function ReferralPage() {
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Edad</label>
-                    <input 
-                      type="text" 
-                      name="edad" 
-                      placeholder="Ej: 3 años" 
+                    <input
+                      type="text"
+                      name="edad"
+                      placeholder="Ej: 3 años"
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.edad ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.edad && <span className="text-sm text-red-500 font-['Merriweather'] italic">Obligatorio</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Sexo <span className="font-normal text-gray-400 capitalize ml-1 text-xs">(opcional)</span></label>
-                    <select 
-                      name="sexo" 
+                    <select
+                      name="sexo"
                       className="w-full bg-white border-2 border-[#E8E4DD] rounded-xl px-4 py-4 outline-none cursor-pointer transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f]"
                     >
                       <option value="">Seleccionar...</option>
@@ -375,33 +375,33 @@ export default function ReferralPage() {
                     <p className="text-base text-[#3D7A5F] font-['Merriweather']">Motivo de derivación y contexto del caso</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-8">
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Motivo de remisión</label>
-                    <textarea 
-                      name="motivo" 
+                    <textarea
+                      name="motivo"
                       rows={4}
-                      placeholder="¿Cómo puede ayudar la nutrición en este caso? Describe el motivo principal de la derivación..." 
+                      placeholder="¿Cómo puede ayudar la nutrición en este caso? Describe el motivo principal de la derivación..."
                       className={`w-full bg-white border-2 rounded-xl px-4 py-4 outline-none resize-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f] ${formErrors.motivo ? 'border-red-500 ring-2 ring-red-100' : 'border-[#E8E4DD]'}`}
                     />
                     {formErrors.motivo && <span className="text-sm text-red-500 font-['Merriweather'] italic">Este campo es obligatorio al derivar un caso</span>}
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Pruebas realizadas <span className="font-normal text-gray-400 capitalize ml-1 text-xs">(opcional)</span></label>
-                    <textarea 
-                      name="pruebas" 
+                    <textarea
+                      name="pruebas"
                       rows={3}
-                      placeholder="Analíticas, ecografías, radiografías u otras pruebas realizadas..." 
+                      placeholder="Analíticas, ecografías, radiografías u otras pruebas realizadas..."
                       className="w-full bg-white border-2 border-[#E8E4DD] rounded-xl px-4 py-4 outline-none resize-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f]"
                     />
                   </div>
                   <div className="flex flex-col gap-3">
                     <label className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest">Tratamientos administrados <span className="font-normal text-gray-400 capitalize ml-1 text-xs">(opcional)</span></label>
-                    <textarea 
-                      name="tratamientos" 
+                    <textarea
+                      name="tratamientos"
                       rows={3}
-                      placeholder="Medicación actual, suplementos, dieta en curso..." 
+                      placeholder="Medicación actual, suplementos, dieta en curso..."
                       className="w-full bg-white border-2 border-[#E8E4DD] rounded-xl px-4 py-4 outline-none resize-none transition-all font-['Merriweather'] text-lg text-[#1e3a5f] focus:border-[#1e3a5f]"
                     />
                   </div>
@@ -418,7 +418,7 @@ export default function ReferralPage() {
                   </div>
                 </div>
 
-                <div 
+                <div
                   className={`border-4 border-dashed rounded-3xl p-10 text-center cursor-pointer transition-all relative ${dragActive ? 'border-[#f2bac9] bg-[#f2bac9]/5' : 'border-[#E8E4DD] bg-[#F8F6F3] hover:border-[#f2bac9] hover:bg-[#f2bac9]/5'}`}
                   onDragEnter={handleDrag}
                   onDragOver={handleDrag}
@@ -426,11 +426,11 @@ export default function ReferralPage() {
                   onDrop={handleDrop}
                   onClick={() => fileInputRef.current?.click()}
                 >
-                  <input 
+                  <input
                     ref={fileInputRef}
-                    type="file" 
-                    multiple 
-                    accept=".pdf,.jpg,.jpeg,.png" 
+                    type="file"
+                    multiple
+                    accept=".pdf,.jpg,.jpeg,.png"
                     className="hidden"
                     onChange={(e) => e.target.files && handleFiles(Array.from(e.target.files))}
                   />
@@ -442,7 +442,7 @@ export default function ReferralPage() {
                 </div>
 
                 {uploadError && <div className="text-sm text-red-500 mt-4 font-['Merriweather'] italic bg-red-50 p-4 rounded-xl border border-red-100">{uploadError}</div>}
-                
+
                 {selectedFiles.length > 0 && (
                   <div className="mt-10 flex flex-col gap-4">
                     <p className="text-sm font-bold text-[#1e3a5f] uppercase tracking-widest px-2">Archivos seleccionados</p>
@@ -455,8 +455,8 @@ export default function ReferralPage() {
                             <span className="text-[#3D7A5F] text-xs">{(file.size / 1024 / 1024).toFixed(1)} MB</span>
                           </div>
                         </div>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           onClick={(e) => { e.stopPropagation(); removeFile(idx); }}
                           className="text-gray-400 hover:text-red-500 transition-colors p-2 bg-white rounded-full shadow-sm hover:shadow-md"
                           title="Eliminar archivo"
@@ -467,7 +467,7 @@ export default function ReferralPage() {
                     ))}
                   </div>
                 )}
-                
+
                 <div className="mt-8 flex gap-3 p-5 bg-[#bad7f2]/10 rounded-2xl border border-[#bad7f2]/20">
                   <div className="text-2xl text-[#1e3a5f]">💡</div>
                   <p className="text-sm text-[#3D7A5F] leading-relaxed italic font-['Merriweather']">
@@ -485,13 +485,13 @@ export default function ReferralPage() {
                     <p className="text-base text-[#3D7A5F] font-['Merriweather']">Compromiso ético y legal</p>
                   </div>
                 </div>
-                
+
                 <div className="bg-[#F8F6F3] border-2 border-[#E8E4DD] rounded-3xl p-6 md:p-10">
                   <div className="flex items-start gap-5">
                     <div className="relative flex items-center h-7">
-                      <input 
-                        type="checkbox" 
-                        name="rgpd" 
+                      <input
+                        type="checkbox"
+                        name="rgpd"
                         id="rgpd"
                         className={`w-7 h-7 rounded border-[#E8E4DD] text-[#f2bac9] focus:ring-[#f2bac9] cursor-pointer transition-all ${formErrors.rgpd ? 'ring-4 ring-red-100 border-red-500' : ''}`}
                       />
@@ -508,8 +508,8 @@ export default function ReferralPage() {
               </div>
 
               <div className="pt-10">
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-[#f2bac9] hover:bg-[#eb9eb2] disabled:bg-[#E8E4DD] disabled:text-gray-400 text-white font-bold py-5 rounded-2xl shadow-xl shadow-[#f2bac9]/20 transition-all transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-4 text-xl uppercase tracking-widest"
                 >
