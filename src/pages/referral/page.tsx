@@ -146,7 +146,6 @@ export default function ReferralPage() {
             Deriva un caso de nutrición
           </h1>
           <p className="text-xl text-[#1e3a5f]/80 max-w-2xl mx-auto mb-10 leading-relaxed font-['Merriweather']">
-            Envíame los datos del paciente y te respondo en menos de 48h con una valoración nutricional personalizada.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -497,7 +496,7 @@ export default function ReferralPage() {
                       />
                     </div>
                     <label htmlFor="rgpd" className="text-lg text-[#1e3a5f] leading-relaxed cursor-pointer font-['Merriweather'] font-medium">
-                      He informado al propietario de que sus datos y los de su mascota serán compartidos con Laura Quintero para recibir asesoramiento nutricional. Acepto la <a href="/politica-de-privacidad" target="_blank" className="text-[#f2bac9] font-bold hover:underline decoration-2">política de privacidad</a>.
+                      He informado al propietario de que sus datos y los de su mascota serán compartidos con Laura Quintero para recibir asesoramiento nutricional. Acepto la <a href="/politica-de-privacidad" target="_blank" className="text-[#f2bac9] font-bold hover:underline decoration-2">política de privacidad</a>.<span className="text-red-500 text-xs ml-1">*</span>
                     </label>
                   </div>
                   <div className="mt-8 pt-8 border-t border-[#E8E4DD] text-sm text-[#3D7A5F] leading-relaxed font-['Merriweather']">
