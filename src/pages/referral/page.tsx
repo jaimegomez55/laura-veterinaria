@@ -3,6 +3,8 @@ import Navbar from '../home/components/Navbar';
 import Footer from '../home/components/Footer';
 
 const FORMSPREE_URL = 'https://formspree.io/f/xeergyqw';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dpe4yga4u/auto/upload';
+const CLOUDINARY_UPLOAD_PRESET = 'Derivaciones';
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const MAX_FILES = 5;
 const ALLOWED_EXT = ['.pdf', '.jpg', '.jpeg', '.png'];
@@ -81,19 +83,39 @@ export default function ReferralPage() {
     }
 
     setIsSubmitting(true);
-    const formData = new FormData(formRef.current!);
-
-    // Add selected files manually if they are not in the FormData from the native input
-    // In our case they are managed by state
-    selectedFiles.forEach(file => {
-      formData.append('archivos', file);
-    });
 
     try {
+      // 1. Upload each file to Cloudinary and collect secure_url values
+      const fileUrls: string[] = [];
+      for (const file of selectedFiles) {
+        const cloudinaryData = new FormData();
+        cloudinaryData.append('file', file);
+        cloudinaryData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+        const cloudRes = await fetch(CLOUDINARY_UPLOAD_URL, {
+          method: 'POST',
+          body: cloudinaryData,
+        });
+
+        if (!cloudRes.ok) {
+          throw new Error(`Error subiendo "${file.name}" a Cloudinary`);
+        }
+
+        const cloudJson = await cloudRes.json();
+        fileUrls.push(cloudJson.secure_url as string);
+      }
+
+      // 2. Build Formspree payload (no raw files — only text fields + URLs)
+      const formData = new FormData(formRef.current!);
+      fileUrls.forEach(url => {
+        formData.append('archivo_url', url);
+      });
+
+      // 3. Send to Formspree
       const response = await fetch(FORMSPREE_URL, {
         method: 'POST',
         body: formData,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' },
       });
 
       if (response.ok) {
@@ -103,6 +125,7 @@ export default function ReferralPage() {
         setSubmitStatus('error');
       }
     } catch (err) {
+      console.error(err);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -164,8 +187,7 @@ export default function ReferralPage() {
             <div className="text-5xl mb-6">✅</div>
             <h2 className="text-3xl font-bold text-[#1e3a5f] mb-6">Caso recibido correctamente</h2>
             <p className="text-xl text-[#1e3a5f]/80 leading-relaxed font-['Merriweather'] mb-10">
-              He recibido los datos del paciente y te contactaré en menos de 48h.<br />
-              Si tienes cualquier duda urgente, puedes escribirme directamente por WhatsApp.
+              He recibido los datos del paciente y contactaré con el tutor en menos de 48h para iniciar la valoración nutricional.
             </p>
             <button
               onClick={() => setSubmitStatus('idle')}
