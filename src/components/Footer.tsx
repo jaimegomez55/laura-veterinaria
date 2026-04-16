@@ -73,6 +73,12 @@ export default function Footer() {
             <RouterLink to="/politica-de-cookies" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
               Política de Cookies
             </RouterLink>
+            <RouterLink to="/aviso-legal" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Aviso Legal
+            </RouterLink>
+            <RouterLink to="/terminos-y-condiciones" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Términos y Condiciones
+            </RouterLink>
           </div>
         </div>
 

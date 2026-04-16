@@ -7,6 +7,7 @@ import Reviews from './components/Reviews';
 import CallToAction from './components/CallToAction';
 import SuccessStories from './components/SuccessStories';
 import Footer from './components/Footer';
+import CookieBanner from '../../components/CookieBanner';
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <SuccessStories />
       <CallToAction />
       <Footer />
+      <CookieBanner />
     </div>
   );
 }

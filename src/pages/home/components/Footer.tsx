@@ -129,6 +129,12 @@ export default function Footer() {
             <a href="/politica-de-cookies" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
               Política de Cookies
             </a>
+            <a href="/aviso-legal" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Aviso Legal
+            </a>
+            <a href="/terminos-y-condiciones" className="text-white underline hover:text-[#f2bac9] text-sm transition-colors">
+              Términos y Condiciones
+            </a>
           </div>
         </div>
       </div>
