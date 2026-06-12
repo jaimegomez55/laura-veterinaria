@@ -1,13 +1,40 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 // ─── Config ──────────────────────────────────────────────────────────────────
 
 const PROFILE_URL = 'https://maps.app.goo.gl/LZgHbw1DjtuZj5nF6';
-const TOTAL_REVIEWS = 3;
+const TOTAL_REVIEWS = 6;
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const reviewsData = [
+const reviewsData: ReviewData[] = [
+  {
+    name: 'Chus Montañes',
+    initials: 'CM',
+    avatarBg: '#E6F4EA',
+    avatarColor: '#137333',
+    date: 'Hace 3 semanas',
+    rating: 5,
+    text: 'Cuando nos dieron el diagnóstico de Lobo nos dieron una esperanza de vida de unas semanas. Gracias a Laura, con la dieta que nos marcó, seguimos disfrutando de nuestro perro. Ya hace un año desde aquello. Lobo parece otro. Está alegre, come bien, juega y corre con total normalidad. Su enfermedad nunca se curará, pero está teniendo una calidad de vida y un tiempo extra que no hubiéramos tenido de otra manera. No podemos estar más agradecidos al trabajo que ha hecho con nuestro perro.',
+  },
+  {
+    name: 'Abeiro Hospital Veterinario',
+    initials: 'AH',
+    avatarBg: '#FEF7E0',
+    avatarColor: '#b06000',
+    date: 'Hace 27 minutos',
+    rating: 5,
+    text: 'Si quieres ofrecer la mejor nutrición para tus animales, sin duda, Laura es una gran profesional. Se vuelca con los casos y basa sus pautas en las últimas evidencias científicas, trabajando en conjunto con los veterinarios referidores. Además, organizamos una formación para nuestro equipo veterinario que fue todo un éxito. La recomiendo.',
+  },
+  {
+    name: 'Marina Couceiro',
+    initials: 'MC',
+    avatarBg: '#F3E8FD',
+    avatarColor: '#7b1fa2',
+    date: 'Hace 15 horas',
+    rating: 5,
+    text: 'Encantadora y todo un acierto. Nuestra gata llevaba tiempo mal, con problemas graves renales, y en una sola reunión ya nos recomendó una dieta que cambió por completo el día a día. Pasamos por quirófano, e incluso con pocas esperanza, y pasados ya casi dos años, nuestra gata está sana y con mucha energía. Muchas gracias, Laura!',
+  },
   {
     name: 'Judit',
     initials: 'J',
@@ -26,17 +53,15 @@ const reviewsData = [
     date: 'Hace 5 días',
     rating: 5,
     text: 'Mi perro Valko es súper desconfiado y miedoso, pero desde el primer momento se mostró cercano y cariñoso con Laura. Siempre ha tenido problemas con la comida en el aspecto digestivo y siendo un perro tan activo me preocupaba que eso afectase a su salud general. Laura nos aconsejó cambiarle el pienso y nos recomendó optar por una alimentación más natural que seguro mejoraría la salud digestiva de Valko. Es atenta y amable y estoy súper agradecida por la ayuda que me brindó. Actualización: Tras seguir una dieta natural, el cambio es más que evidente. El pelo mucho más brillante y una actitud mucho más relajada al no tener digestiones tan pesadas, mil gracias una vez más Laura.',
-    detail: 'Valko — Pastor Alemán',
   },
   {
-    name: 'Chus Montañes',
-    initials: 'CM',
-    avatarBg: '#E6F4EA',
-    avatarColor: '#137333',
-    date: 'Hace 3 semanas',
+    name: 'María IV',
+    initials: 'MI',
+    avatarBg: '#E8F0FE',
+    avatarColor: '#1a73e8',
+    date: 'Hace 25 minutos',
     rating: 5,
-    text: 'Cuando nos dieron el diagnóstico de Lobo nos dieron una esperanza de vida de unas semanas. Gracias a Laura, con la dieta que nos marcó, seguimos disfrutando de nuestro perro. Ya hace un año desde aquello. Lobo parece otro. Está alegre, come bien, juega y corre con total normalidad. Su enfermedad nunca se curará, pero está teniendo una calidad de vida y un tiempo extra que no hubiéramos tenido de otra manera. No podemos estar más agradecidos al trabajo que ha hecho con nuestro perro.',
-    detail: 'Lobo — Pastor Alemán',
+    text: 'Nutricionista veterinaria que aplica las últimas evidencias en sus pautas. No solo para elaboración de dietas naturales. También revisión de piensos, dietas húmedas o asesoramiento a otros veterinarios. Muy recomendable.',
   },
 ];
 
@@ -74,6 +99,23 @@ function StarFill() {
   );
 }
 
+function ChevronIcon({ direction }: { direction: 'left' | 'right' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="w-5 h-5 lg:w-6 lg:h-6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={direction === 'left' ? 'M15 19l-7-7 7-7' : 'M9 5l7 7-7 7'} />
+    </svg>
+  );
+}
+
 interface ReviewData {
   name: string;
   initials: string;
@@ -82,14 +124,14 @@ interface ReviewData {
   date: string;
   rating: number;
   text: string;
-  detail: string;
+  detail?: string;
 }
 
 function ReviewCard({ review }: { review: ReviewData }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col">
+    <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col h-full">
       <div className="flex items-start justify-between mb-3">
         <div className="flex items-center gap-3">
           <div
@@ -124,9 +166,101 @@ function ReviewCard({ review }: { review: ReviewData }) {
         </button>
       </div>
 
-      <p className="text-xs text-[#bad7f2] font-semibold mt-4 pt-4 border-t border-gray-100">
-        — {review.detail}
-      </p>
+      {review.detail && (
+        <p className="text-xs text-[#bad7f2] font-semibold mt-4 pt-4 border-t border-gray-100">
+          — {review.detail}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// ─── Carousel ────────────────────────────────────────────────────────────────
+
+const ARROW_BUTTON_CLASSES =
+  'flex-shrink-0 w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-[#bad7f2] flex items-center justify-center text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-[#1e3a5f] disabled:cursor-not-allowed transition-colors duration-200';
+
+function ReviewsCarousel({ reviews }: { reviews: ReviewData[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollToIndex = (index: number) => {
+    const container = scrollRef.current;
+    const card = container?.children[index] as HTMLElement | undefined;
+    if (container && card) {
+      container.scrollTo({ left: card.offsetLeft - container.offsetLeft, behavior: 'smooth' });
+    }
+  };
+
+  const handleScroll = () => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let closest = 0;
+    let minDistance = Infinity;
+    Array.from(container.children).forEach((child, i) => {
+      const el = child as HTMLElement;
+      const distance = Math.abs(el.offsetLeft - container.offsetLeft - container.scrollLeft);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closest = i;
+      }
+    });
+    setActiveIndex(closest);
+  };
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 lg:gap-4">
+        <button
+          type="button"
+          onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+          disabled={activeIndex === 0}
+          aria-label="Reseña anterior"
+          className={ARROW_BUTTON_CLASSES}
+        >
+          <ChevronIcon direction="left" />
+        </button>
+
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex-1 flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar py-2"
+        >
+          {reviews.map((review, i) => (
+            <div
+              key={i}
+              className="snap-start shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.3333%-1.3334rem)]"
+            >
+              <ReviewCard review={review} />
+            </div>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => scrollToIndex(Math.min(reviews.length - 1, activeIndex + 1))}
+          disabled={activeIndex === reviews.length - 1}
+          aria-label="Reseña siguiente"
+          className={ARROW_BUTTON_CLASSES}
+        >
+          <ChevronIcon direction="right" />
+        </button>
+      </div>
+
+      <div className="flex justify-center items-center gap-2 mt-6">
+        {reviews.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => scrollToIndex(i)}
+            aria-label={`Ir a la reseña ${i + 1}`}
+            className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
+              i === activeIndex ? 'bg-[#1e3a5f]' : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -167,12 +301,8 @@ export default function Reviews() {
           </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviewsData.map((review, i) => (
-            <ReviewCard key={i} review={review} />
-          ))}
-        </div>
+        {/* Carousel */}
+        <ReviewsCarousel reviews={reviewsData} />
 
         {/* Google CTA button */}
         <div className="flex justify-center mt-10">
