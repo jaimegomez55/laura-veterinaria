@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import VideoSection from '../components/VideoSection.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Reviews from '../components/Reviews.astro';
+import SuccessStories from '../components/SuccessStories.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import CookieBanner from '../components/CookieBanner';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Laura Quintero',
+    jobTitle: 'Nutricionista veterinaria',
+    description:
+      'Veterinaria especializada en nutrición clínica para perros y gatos. Ofrece asesoramiento nutricional online personalizado a toda España.',
+    url: 'https://lauraquinteroveterinaria.com',
+    telephone: '+34634359766',
+    email: 'laura.quintero.vet@gmail.com',
+    sameAs: [
+      'https://www.linkedin.com/in/laura-quintero-veterinaria/',
+      'https://www.instagram.com/laura_quintero_veterinaria/',
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '6',
+      bestRating: '5',
+      worstRating: '1',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Consulta de nutrición veterinaria personalizada',
+    description:
+      'Asesoramiento nutricional online para perros y gatos, con dieta adaptada a la patología del animal y acompañamiento continuo cada dos semanas.',
+    provider: {
+      '@type': 'Person',
+      name: 'Laura Quintero',
+      url: 'https://lauraquinteroveterinaria.com',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'España',
+    },
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceType: 'Consulta online',
+      availableLanguage: 'Spanish',
+    },
+    url: 'https://lauraquinteroveterinaria.com',
+  },
+];
+---
+<Base
+  title="Nutrición veterinaria personalizada para perros | Laura Quintero"
+  description="Ayudo a mejorar la salud de tu perro a través de una alimentación natural y personalizada, con acompañamiento profesional paso a paso. Consulta online para toda España."
+  jsonLd={jsonLd}
+>
+  <Navbar />
+  <Hero />
+  <VideoSection />
+  <About />
+  <Services />
+  <Reviews />
+  <SuccessStories />
+  <CallToAction />
+  <Footer />
+  <WhatsAppButton />
+  <CookieBanner client:load />
+</Base>

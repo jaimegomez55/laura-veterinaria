@@ -1,0 +1,54 @@
+---
+import SEO from '../components/SEO.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+  jsonLd?: object[];
+}
+
+const { title, description, ogImage, canonical, jsonLd } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <SEO title={title} description={description} ogImage={ogImage} canonical={canonical} />
+  <link rel="icon" type="image/png" href="/logo.png" />
+
+  <!-- Fuentes: solo pesos realmente usados en el sitio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- RemixIcon (iconos usados en todo el sitio) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css"
+  />
+
+  <!-- Microsoft Clarity: cargado tras load para no bloquear el render -->
+  <script is:inline>
+    window.addEventListener('load', function () {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(window, document, 'clarity', 'script', 'uxprye9gbk');
+    });
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLd && jsonLd.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))}
+</head>
+<body>
+  <slot />
+</body>
+</html>

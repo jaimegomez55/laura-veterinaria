@@ -1,0 +1,53 @@
+---
+const services = [
+  {
+    icon: 'ri-psychotherapy-fill',
+    title: 'Evaluación inicial personalizada',
+    description: 'Analizo el caso de tu perro o gato para saber si es apto para una dieta natural y qué enfoque nutricional necesita según su situación actual.',
+    color: 'from-[#bad7f2] to-[#bad7f2]/80',
+  },
+  {
+    icon: 'ri-team-fill',
+    title: 'Primera consulta nutricional',
+    description: 'Sesión online de 45 minutos donde revisamos su historial, diagnóstico, síntomas, medicación y alimentación actual, y te explico paso a paso cómo será el proceso.',
+    color: 'from-[#f2bac9] to-[#f2bac9]/80',
+  },
+  {
+    icon: 'ri-walk-fill',
+    title: 'Dieta adaptada a su patología',
+    description: 'En un plazo aproximado de 10 días recibirás una dieta adaptada a tu mascota, que ajustaré las veces que haga falta.',
+    color: 'from-[#bad7f2] to-[#bad7f2]/80',
+  },
+  {
+    icon: 'ri-heart-add-fill',
+    title: 'Acompañamiento y seguimiento',
+    description: 'Realizamos revisiones cada dos semanas y tienes consultas de seguimiento para resolver dudas y ajustar la dieta durante el proceso.',
+    color: 'from-[#f2bac9] to-[#f2bac9]/80',
+  },
+];
+---
+<section id="services" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
+        Servicios de nutrición adaptados a tu perro
+      </h2>
+      <div class="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Planes personalizados, seguimiento y acompañamiento real para mejorar su salud a través de la alimentación.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 group">
+          <div class={`w-16 h-16 flex items-center justify-center bg-gradient-to-br ${service.color} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <i class={`${service.icon} text-3xl text-white`}></i>
+          </div>
+          <h3 class="text-2xl font-bold text-[#1e3a5f] mb-4">{service.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

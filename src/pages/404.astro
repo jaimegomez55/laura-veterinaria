@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+<Base
+  title="Página no encontrada | Laura Quintero Veterinaria"
+  description="La página que buscas no existe. Vuelve al inicio para encontrar información sobre nutrición veterinaria personalizada para tu perro."
+>
+  <Navbar />
+  <div class="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gradient-to-br from-[#bad7f2]/20 to-[#f2bac9]/20">
+    <p class="text-8xl font-bold text-[#1e3a5f]/20 mb-4">404</p>
+    <h1 class="text-3xl font-bold text-[#1e3a5f] mb-4">Esta página no existe</h1>
+    <p class="text-lg text-gray-500 mb-8">Pero podemos ayudarte a encontrar lo que buscas.</p>
+    <a
+      href="/"
+      class="bg-[#f2bac9] hover:bg-[#bad7f2] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+    >
+      Volver al inicio
+    </a>
+  </div>
+  <Footer />
+  <WhatsAppButton />
+</Base>

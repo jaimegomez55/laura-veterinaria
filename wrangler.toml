@@ -1,7 +1,5 @@
 name = "veterinario"
 compatibility_date = "2025-11-22"
-main = "functions/_worker.js"
 
 [assets]
-directory = "./out"
-
+directory = "./dist"

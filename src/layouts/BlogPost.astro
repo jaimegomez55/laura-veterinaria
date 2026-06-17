@@ -1,0 +1,97 @@
+---
+import Base from './Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import CookieBanner from '../components/CookieBanner';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  keyword: string;
+  keywords?: string[];
+  answerBlock?: string;
+  ogImage?: string;
+}
+
+const { title, description, pubDate, updatedDate, keyword, keywords, answerBlock, ogImage } = Astro.props;
+
+const blogPostingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  keywords: [keyword, ...(keywords ?? [])].join(', '),
+  datePublished: pubDate.toISOString(),
+  ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+  author: {
+    '@type': 'Person',
+    name: 'Laura Quintero',
+    url: 'https://lauraquinteroveterinaria.com',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Laura Quintero',
+    url: 'https://lauraquinteroveterinaria.com',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(Astro.url.pathname, Astro.site).toString(),
+  },
+};
+---
+<Base title={title} description={description} ogImage={ogImage} jsonLd={[blogPostingSchema]}>
+  <Navbar />
+
+  <article class="min-h-screen bg-white">
+    <div class="container mx-auto px-6 py-24 lg:py-32 max-w-3xl">
+
+      <!-- Metadatos del artículo -->
+      <header class="mb-12">
+        <time
+          datetime={pubDate.toISOString()}
+          class="text-sm text-[#bad7f2] font-semibold uppercase tracking-widest"
+        >
+          {pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <h1 class="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mt-3 mb-6 leading-tight">
+          {title}
+        </h1>
+        <div class="w-20 h-1 bg-[#f2bac9]"></div>
+      </header>
+
+      <!-- Bloque de respuesta directa (AEO) -->
+      {answerBlock && (
+        <div class="bg-gradient-to-br from-[#bad7f2]/20 to-[#f2bac9]/20 border-l-4 border-[#f2bac9] rounded-r-xl p-6 mb-10">
+          <p class="text-lg text-[#1e3a5f] leading-relaxed font-medium">{answerBlock}</p>
+        </div>
+      )}
+
+      <!-- Contenido del artículo -->
+      <div class="prose prose-lg prose-blue max-w-none text-gray-700 leading-relaxed
+        prose-headings:text-[#1e3a5f] prose-headings:font-bold
+        prose-a:text-[#f2bac9] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-[#1e3a5f]">
+        <slot />
+      </div>
+
+      <!-- CTA al final del artículo -->
+      <div class="mt-16 bg-gradient-to-br from-[#bad7f2] to-[#f2bac9] rounded-2xl p-8 text-center">
+        <p class="text-white font-semibold text-xl mb-4">¿Tienes dudas sobre la alimentación de tu perro?</p>
+        <a
+          href="https://calendly.com/laura-quintero-vet/llamada-gratuita-informacion"
+          class="inline-block bg-white text-[#1e3a5f] font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          Agenda una llamada gratuita
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+  <CookieBanner client:load />
+</Base>

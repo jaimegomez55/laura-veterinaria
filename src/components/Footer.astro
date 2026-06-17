@@ -1,0 +1,96 @@
+---
+import { Image } from 'astro:assets';
+import logoNegativo from '../assets/images/logonegativo.png';
+
+const year = new Date().getFullYear();
+---
+<footer class="bg-[#1e3a5f] text-white py-12">
+  <div class="container mx-auto px-6 lg:px-12">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+
+      <!-- Marca -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-9 h-9 flex items-center justify-center">
+            <Image
+              src={logoNegativo}
+              alt="Logo Laura Quintero"
+              width={36}
+              height={36}
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <span class="text-2xl font-bold" style="font-family: 'Pacifico', serif;">
+            Laura Quintero
+          </span>
+        </div>
+        <p class="text-white/80 leading-relaxed">
+          Acompaño a familias a mejorar la salud y calidad de vida de sus mascotas a través de una alimentación adecuada.
+        </p>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Enlaces Rápidos</h3>
+        <ul class="space-y-2">
+          <li><a href="/#home" class="text-white/80 hover:text-[#f2bac9] transition-colors whitespace-nowrap">Inicio</a></li>
+          <li><a href="/#about" class="text-white/80 hover:text-[#f2bac9] transition-colors whitespace-nowrap">Sobre Mí</a></li>
+          <li><a href="/#services" class="text-white/80 hover:text-[#f2bac9] transition-colors whitespace-nowrap">Servicios</a></li>
+          <li><a href="/#reviews" class="text-white/80 hover:text-[#f2bac9] transition-colors whitespace-nowrap">Reseñas</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Contacto</h3>
+        <ul class="space-y-3">
+          <li class="flex items-center gap-3">
+            <i class="ri-phone-fill text-lg text-[#bad7f2]"></i>
+            <span class="text-white/80">+34 634359766</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="ri-mail-fill text-lg text-[#f2bac9]"></i>
+            <span class="text-white/80">laura.quintero.vet@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Redes sociales -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">Síguenos</h3>
+        <div class="flex gap-4">
+          <a
+            href="https://www.linkedin.com/in/laura-quintero-veterinaria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#f2bac9] rounded-full transition-all duration-300"
+            aria-label="LinkedIn de Laura Quintero"
+          >
+            <i class="ri-linkedin-fill text-xl"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/laura_quintero_veterinaria/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-10 h-10 flex items-center justify-center bg-white/10 hover:bg-[#f2bac9] rounded-full transition-all duration-300"
+            aria-label="Instagram de Laura Quintero"
+          >
+            <i class="ri-instagram-fill text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-white/60 text-sm">
+        © {year} Laura Quintero. Todos los derechos reservados.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center sm:justify-end">
+        <a href="/politica-de-privacidad" class="text-white underline hover:text-[#f2bac9] text-sm transition-colors">Política de Privacidad</a>
+        <a href="/politica-de-cookies" class="text-white underline hover:text-[#f2bac9] text-sm transition-colors">Política de Cookies</a>
+        <a href="/aviso-legal" class="text-white underline hover:text-[#f2bac9] text-sm transition-colors">Aviso Legal</a>
+        <a href="/terminos-y-condiciones" class="text-white underline hover:text-[#f2bac9] text-sm transition-colors">Términos y Condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>

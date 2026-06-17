@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import CookieBanner from '../../components/CookieBanner';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<Base
+  title="Blog de nutrición veterinaria | Laura Quintero"
+  description="Artículos sobre nutrición canina, alimentación natural para perros, dietas terapéuticas y consejos de una nutricionista veterinaria especializada."
+>
+  <Navbar />
+
+  <section class="min-h-screen bg-gray-50">
+    <div class="container mx-auto px-6 py-24 lg:py-32">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
+          Blog de Nutrición Veterinaria
+        </h1>
+        <div class="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Artículos basados en evidencia científica para ayudarte a entender la alimentación de tu perro.
+        </p>
+      </div>
+
+      {posts.length === 0 ? (
+        <div class="text-center py-20">
+          <div class="text-6xl mb-6">🐾</div>
+          <h2 class="text-2xl font-bold text-[#1e3a5f] mb-4">Próximamente</h2>
+          <p class="text-gray-500 text-lg max-w-md mx-auto">
+            Estamos preparando artículos sobre nutrición canina. ¡Vuelve pronto!
+          </p>
+          <a
+            href="/"
+            class="inline-block mt-8 bg-[#f2bac9] hover:bg-[#bad7f2] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300"
+          >
+            Volver al inicio
+          </a>
+        </div>
+      ) : (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div class="p-6">
+                <time
+                  datetime={post.data.pubDate.toISOString()}
+                  class="text-xs text-[#bad7f2] font-semibold uppercase tracking-widest"
+                >
+                  {post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <h2 class="text-xl font-bold text-[#1e3a5f] mt-2 mb-3">{post.data.title}</h2>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">{post.data.description}</p>
+                <a
+                  href={`/blog/${post.id.replace(/\.mdx?$/, '')}`}
+                  class="text-[#f2bac9] font-semibold text-sm hover:underline"
+                >
+                  Leer artículo →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+  <CookieBanner client:load />
+</Base>

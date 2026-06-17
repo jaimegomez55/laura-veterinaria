@@ -1,0 +1,35 @@
+---
+import Base from './Base.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import CookieBanner from '../components/CookieBanner';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  lastUpdated: string;
+}
+
+const { title, description, heading, lastUpdated } = Astro.props;
+---
+<Base title={title} description={description}>
+  <Navbar />
+  <div class="min-h-screen bg-gray-50">
+    <div class="container mx-auto px-6 py-24 lg:py-32">
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm p-8 md:p-12">
+        <h1 class="text-4xl font-bold text-[#1e3a5f] mb-2" style="font-family: 'Pacifico', serif;">
+          {heading}
+        </h1>
+        <p class="text-gray-400 text-sm mb-8">{lastUpdated}</p>
+        <div class="prose prose-blue max-w-none text-gray-700 leading-relaxed space-y-8">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer />
+  <WhatsAppButton />
+  <CookieBanner client:load />
+</Base>

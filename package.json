@@ -1,7 +1,11 @@
 {
   "dependencies": {
+    "@astrojs/react": "^5.0.7",
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/tailwind": "^6.0.2",
     "@stripe/react-stripe-js": "4.0.2",
     "@supabase/supabase-js": "2.57.4",
+    "astro": "^6.4.7",
     "firebase": "12.0.0",
     "i18next": "25.4.1",
     "i18next-browser-languagedetector": "^8.2.0",
@@ -34,10 +38,10 @@
   "name": "react",
   "private": true,
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "preview": "vite preview",
-    "deploy": "npx wrangler deploy --assets=./out"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npx wrangler pages deploy ./dist"
   },
   "type": "module",
   "version": "0.0.0"
