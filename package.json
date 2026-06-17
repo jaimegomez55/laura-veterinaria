@@ -2,7 +2,6 @@
   "dependencies": {
     "@astrojs/react": "^5.0.7",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/tailwind": "^6.0.2",
     "@stripe/react-stripe-js": "4.0.2",
     "@supabase/supabase-js": "2.57.4",
     "astro": "^6.4.7",
