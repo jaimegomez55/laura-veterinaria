@@ -9,9 +9,9 @@ const navItems = [
   { name: 'Sobre Mí', href: isHome ? '#about' : '/#about' },
   { name: 'Servicios', href: isHome ? '#services' : '/#services' },
   { name: 'Deriva un caso', href: '/deriva-un-caso' },
-  { name: 'Calculadora Materia Seca', href: '/calculadora' },
+  { name: 'Calculadora', href: '/calculadora' },
   { name: 'Reseñas', href: isHome ? '#reviews' : '/#reviews' },
-  { name: 'Historias de Éxito', href: isHome ? '#success-stories' : '/#success-stories' },
+  { name: 'Casos de Éxito', href: isHome ? '#success-stories' : '/#success-stories' },
   { name: 'Preguntas', href: isHome ? '#faq' : '/#faq' },
 ];
 
@@ -24,70 +24,71 @@ const contactarHref = isHome ? '#cta' : '/#cta';
   <div class="container mx-auto px-6 lg:px-12">
     <div class="flex items-center justify-between">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="w-12 h-12 flex items-center justify-center">
-          <Image
-            src={logoImg}
-            alt="Logo Laura Quintero"
-            width={48}
-            height={48}
-            class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-        <span class="text-2xl font-bold text-[#1e3a5f]" style="font-family: 'Pacifico', serif;">
-          Laura Quintero
-        </span>
-      </a>
+      <!-- Todo agrupado a la izquierda: logo + páginas reales -->
+      <div class="flex items-center gap-6">
+        <a href="/" class="flex items-center gap-2 group flex-shrink-0 whitespace-nowrap">
+          <div class="w-12 h-12 flex items-center justify-center">
+            <Image
+              src={logoImg}
+              alt="Logo Laura Quintero"
+              width={48}
+              height={48}
+              class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+          <span class="text-2xl font-bold text-[#1e3a5f]" style="font-family: 'Pacifico', serif;">
+            Laura Quintero
+          </span>
+        </a>
 
-      <!-- Desktop nav links -->
-      <div class="hidden md:flex items-center gap-8">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class={`text-[#1e3a5f] hover:text-[#f2bac9] font-medium transition-colors whitespace-nowrap ${currentPath === item.href ? 'text-[#f2bac9]' : ''}`}
-          >
-            {item.name}
+        <!-- Enlaces a páginas reales (no son anclas de la home) -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="/calculadora" class="text-[#1e3a5f] hover:text-[#f2bac9] font-medium transition-colors whitespace-nowrap">
+            Calculadora
           </a>
-        ))}
+          <a href="/deriva-un-caso" class="text-[#1e3a5f] hover:text-[#f2bac9] font-medium transition-colors whitespace-nowrap">
+            Deriva un caso
+          </a>
+        </div>
       </div>
 
-      <!-- CTA button (desktop) -->
-      <a
-        href={contactarHref}
-        class="hidden md:inline-block bg-[#f2bac9] hover:bg-[#bad7f2] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap"
-      >
-        Contactar
-      </a>
+      <!-- Menú + CTA agrupados a la derecha -->
+      <div class="flex items-center gap-4">
 
-      <!-- Mobile hamburger -->
-      <button
-        id="menu-btn"
-        class="md:hidden w-10 h-10 flex items-center justify-center text-[#1e3a5f]"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-      >
-        <i id="menu-icon" class="ri-menu-line text-2xl"></i>
-      </button>
+        <!-- Botón de menú (visible en cualquier tamaño de pantalla) -->
+        <button
+          id="menu-btn"
+          class="flex items-center gap-2 p-2 md:px-4 md:py-2 md:rounded-lg md:hover:bg-gray-100 text-[#1e3a5f] transition-colors"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <i id="menu-icon" class="ri-menu-line text-2xl"></i>
+          <span class="hidden md:inline text-sm font-medium">Menú</span>
+        </button>
+
+        <a href={contactarHref}
+          class="hidden md:inline-block bg-[#f2bac9] hover:bg-[#bad7f2] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 whitespace-nowrap"
+        >
+          Contactar
+        </a>
+      </div>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- Menú desplegable (mismo panel para móvil y desktop) -->
     <div
       id="mobile-menu"
-      class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 bg-white rounded-lg shadow-md"
+      class="hidden mt-4 pb-4 border-t border-gray-200 bg-white rounded-lg shadow-md"
     >
       <div class="flex flex-col gap-4 pt-4">
         {navItems.map((item) => (
-          <a
-            href={item.href}
+          <a href={item.href}
             class="text-[#1e3a5f] hover:text-[#f2bac9] font-medium transition-colors px-2"
             data-mobile-link
           >
             {item.name}
           </a>
         ))}
-        <a
-          href={contactarHref}
+        <a href={contactarHref}
           class="bg-[#f2bac9] hover:bg-[#bad7f2] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 text-center"
           data-mobile-link
         >
