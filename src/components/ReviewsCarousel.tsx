@@ -22,6 +22,16 @@ const reviewsData: ReviewData[] = [
     text: 'Cuando nos dieron el diagnóstico de Lobo nos dieron una esperanza de vida de unas semanas. Gracias a Laura, con la dieta que nos marcó, seguimos disfrutando de nuestro perro. Ya hace un año desde aquello. Lobo parece otro. Está alegre, come bien, juega y corre con total normalidad. Su enfermedad nunca se curará, pero está teniendo una calidad de vida y un tiempo extra que no hubiéramos tenido de otra manera. No podemos estar más agradecidos al trabajo que ha hecho con nuestro perro.',
   },
   {
+    name: 'Lidiannys Tamayo Rodríguez',
+    initials: 'LT',
+    avatarBg: '#FCE8E6',
+    avatarColor: '#c5221f',
+    date: 'Hace 2 días',
+    rating: 5,
+    text: 'Estoy muy contenta con los resultados obtenidos con Laura, mi perrito estaba siempre malito del estómago y frecuentemente estaba medicado y visitando la clínica, hasta que me sugirieron la página de Laura y con sus dietas y distintos suplementos logramos en 3 meses que Rocky sea un perrito activo, con estabilidad en su sistema digestivo, aumento de peso y sin tantas visitas al veterinario ☺️. Ahora a continuar cuidándole y manteniendo sus dietas.. 😁',
+    detail: 'Problemas digestivos crónicos',
+  },
+  {
     name: 'Abeiro Hospital Veterinario',
     initials: 'AH',
     avatarBg: '#FEF7E0',
@@ -66,6 +76,15 @@ const reviewsData: ReviewData[] = [
     date: 'Hace 25 minutos',
     rating: 5,
     text: 'Nutricionista veterinaria que aplica las últimas evidencias en sus pautas. No solo para elaboración de dietas naturales. También revisión de piensos, dietas húmedas o asesoramiento a otros veterinarios. Muy recomendable.',
+  },
+  {
+    name: 'Su Dmp',
+    initials: 'SD',
+    avatarBg: '#FEF7E0',
+    avatarColor: '#b06000',
+    date: 'Hace 1 semana',
+    rating: 5,
+    text: 'La mejor nutricionista, ha conseguido que mi peque coma con apetito y que toda su dieta le siente genial!!',
   },
 ];
 

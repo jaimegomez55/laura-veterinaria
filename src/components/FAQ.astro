@@ -1,0 +1,60 @@
+---
+export const faqItems = [
+  {
+    question: '¿Y si me equivoco con las cantidades o le falta algún nutriente?',
+    answer: 'Es la pregunta que más me hacen, y es justo mi trabajo: no te dejo sola con una hoja de cálculo. Te doy el plan con las cantidades exactas para tu perro y estoy al otro lado para cualquier ajuste o duda durante todo el proceso.',
+  },
+  {
+    question: 'Ya he probado varios piensos "premium" y no ha funcionado, ¿por qué sería distinto?',
+    answer: 'Porque no partimos de una marca, partimos de tu perro: su historial, su patología si la tiene, y lo que ya has probado. La dieta se diseña para él, no es un producto igual para todos, y se ajusta las veces que haga falta hasta que funcione.',
+  },
+  {
+    question: '¿Me vas a vender pienso o alguna marca en concreto?',
+    answer: 'No. No vendo pienso ni tengo marca propia que colocarte. Mi único interés es que tu perro coma bien, así que la recomendación es independiente y no depende de venderte ningún producto.',
+  },
+  {
+    question: 'Mi perro tiene una patología (renal, Cushing, diabetes...), ¿puedes ayudarme igual?',
+    answer: 'Sí, de hecho es donde más aporta este trabajo. Cuando hay una patología, la alimentación deja de ser un detalle y pasa a ser parte del tratamiento, coordinada si hace falta con tu veterinario habitual.',
+  },
+  {
+    question: '¿Merece la pena el gasto frente a seguir como estoy?',
+    answer: 'Al principio puede parecer un gasto extra. Pero la mayoría de mis clientes terminan gastando menos que antes, cuando sumaban el pienso caro que no funcionaba y las visitas al veterinario que se repetían.',
+  },
+  {
+    question: '¿Es todo online? ¿Vale para cualquier parte de España?',
+    answer: 'Sí, toda la consulta es online: videollamada, plan por escrito y seguimiento por mensaje. Trabajo con perros y gatos de toda España, no hace falta que estés cerca de mí.',
+  },
+  {
+    question: '¿Cuánto tarda en notarse el cambio?',
+    answer: 'Depende del caso, pero en la mayoría se empieza a notar en las primeras semanas: más apetito, mejor energía, mejor pelo. Los ajustes de la dieta y el seguimiento cada dos semanas están pensados justo para eso.',
+  },
+];
+---
+<section id="faq" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+  <div class="container mx-auto px-6 lg:px-12 max-w-3xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
+        Preguntas antes de empezar
+      </h2>
+      <div class="w-20 h-1 bg-[#f2bac9] mx-auto mb-6"></div>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Lo que más me preguntan antes de la primera consulta.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqItems.map((item) => (
+        <details class="group bg-white rounded-2xl shadow-lg p-6 open:shadow-2xl transition-all duration-300">
+          <summary class="flex items-center justify-between gap-4 cursor-pointer list-none font-bold text-lg text-[#1e3a5f]">
+            <span>{item.question}</span>
+            <i class="ri-add-line text-2xl text-[#f2bac9] flex-shrink-0 group-open:hidden"></i>
+            <i class="ri-subtract-line text-2xl text-[#f2bac9] flex-shrink-0 hidden group-open:block"></i>
+          </summary>
+          <p class="text-gray-600 leading-relaxed mt-4 pt-4 border-t border-gray-100">
+            {item.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

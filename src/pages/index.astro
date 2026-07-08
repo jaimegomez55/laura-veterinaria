@@ -7,6 +7,7 @@ import About from '../components/About.astro';
 import Services from '../components/Services.astro';
 import Reviews from '../components/Reviews.astro';
 import SuccessStories from '../components/SuccessStories.astro';
+import FAQ, { faqItems } from '../components/FAQ.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
@@ -30,7 +31,7 @@ const jsonLd = [
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '6',
+      reviewCount: '10',
       bestRating: '5',
       worstRating: '1',
     },
@@ -57,6 +58,15 @@ const jsonLd = [
     },
     url: 'https://lauraquinteroveterinaria.com',
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  },
 ];
 ---
 <Base
@@ -71,6 +81,7 @@ const jsonLd = [
   <Services />
   <Reviews />
   <SuccessStories />
+  <FAQ />
   <CallToAction />
   <Footer />
   <WhatsAppButton />
