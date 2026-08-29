@@ -1,0 +1,10 @@
+# Copia este archivo a .dev.vars (no se sube a git) para probar functions/api/derivar.ts
+# en local con `npx wrangler pages dev ./dist`.
+#
+# En producción, estas variables se configuran en el dashboard de Cloudflare Pages
+# (Settings → Environment variables) o con `wrangler pages secret put <NOMBRE>`.
+
+RESEND_API_KEY=re_xxxxxxxxxxxx
+RESEND_FROM_EMAIL=derivaciones@lauraquinteroveterinaria.com
+LAURA_EMAIL=laura@example.com
+SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/xxxxxxxx/exec

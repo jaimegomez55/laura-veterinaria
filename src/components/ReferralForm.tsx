@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 
-const FORMSPREE_URL = 'https://formspree.io/f/xeergyqw';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dpe4yga4u/auto/upload';
 const CLOUDINARY_UPLOAD_PRESET = 'Derivaciones';
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
@@ -11,6 +10,7 @@ export default function ReferralForm() {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [formErrors, setFormErrors] = useState<Record<string, boolean>>({});
   const [dragActive, setDragActive] = useState(false);
@@ -70,15 +70,41 @@ export default function ReferralForm() {
         fileUrls.push(cloudJson.secure_url as string);
       }
       const formData = new FormData(formRef.current!);
-      fileUrls.forEach((url) => formData.append('archivo_url', url));
-      const response = await fetch(FORMSPREE_URL, { method: 'POST', body: formData, headers: { Accept: 'application/json' } });
-      if (response.ok) {
+      const payload = {
+        clinica: formData.get('clinica') as string,
+        veterinario: formData.get('veterinario') as string,
+        emailClinica: formData.get('email') as string,
+        telefono: (formData.get('telefono') as string) || undefined,
+        tutor: formData.get('tutor') as string,
+        tutorTelefono: formData.get('tutor_telefono') as string,
+        tutorEmail: (formData.get('tutor_email') as string) || undefined,
+        paciente: formData.get('nombre_mascota') as string,
+        especie: formData.get('especie') as string,
+        raza: formData.get('raza') as string,
+        peso: formData.get('peso') as string,
+        edad: formData.get('edad') as string,
+        sexo: (formData.get('sexo') as string) || undefined,
+        motivo: formData.get('motivo') as string,
+        pruebas: (formData.get('pruebas') as string) || undefined,
+        tratamientos: (formData.get('tratamientos') as string) || undefined,
+        adjuntos: fileUrls,
+        rgpd: formData.get('rgpd') === 'on',
+      };
+      const response = await fetch('/api/derivar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+      if (result.success) {
         setSubmitStatus('success');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
+        setErrorMessage(result.error || null);
         setSubmitStatus('error');
       }
     } catch {
+      setErrorMessage(null);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -126,7 +152,7 @@ export default function ReferralForm() {
           <div className="text-4xl mb-4">⚠️</div>
           <h2 className="text-2xl font-bold text-[#1e3a5f] mb-2">Algo no ha ido bien</h2>
           <p className="text-lg text-[#1e3a5f]/70 font-['Merriweather']">
-            Ha habido un problema al enviar el formulario. Por favor, inténtalo de nuevo o contáctame directamente por WhatsApp.
+            {errorMessage || 'Ha habido un problema al enviar el formulario. Por favor, inténtalo de nuevo o contáctame directamente por WhatsApp.'}
           </p>
         </div>
       )}
