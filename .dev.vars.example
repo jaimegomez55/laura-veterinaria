@@ -8,3 +8,10 @@ RESEND_API_KEY=re_xxxxxxxxxxxx
 RESEND_FROM_EMAIL=derivaciones@lauraquinteroveterinaria.com
 LAURA_EMAIL=laura@example.com
 SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/xxxxxxxx/exec
+
+# Lista de orígenes permitidos separados por comas (sin barra final).
+# El endpoint rechaza con 403 cualquier petición cuyo header Origin no esté en esta lista.
+# En el dashboard de Cloudflare Pages puedes definir un valor distinto para "Production"
+# y para "Preview" (p. ej. añadiendo la URL estable de la rama en preview:
+# https://<nombre-de-rama>.veterinario.pages.dev).
+ALLOWED_ORIGIN=https://lauraquinteroveterinaria.com

@@ -3,3 +3,13 @@ compatibility_date = "2025-11-22"
 
 [assets]
 directory = "./dist"
+
+# Namespace de KV usado para el rate limiting de /api/derivar (functions/api/derivar.ts).
+# Antes del primer deploy hay que crear el namespace real:
+#   npx wrangler kv namespace create RATE_LIMIT_KV
+#   npx wrangler kv namespace create RATE_LIMIT_KV --preview
+# Cada comando devuelve un "id" — sustituye los valores de abajo por esos ids.
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "TODO_reemplazar_con_el_id_de_wrangler_kv_namespace_create"
+preview_id = "TODO_reemplazar_con_el_id_de_wrangler_kv_namespace_create_--preview"

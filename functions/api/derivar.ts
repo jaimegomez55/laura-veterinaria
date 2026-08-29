@@ -1,8 +1,15 @@
+interface KVNamespaceLike {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+}
+
 interface Env {
   RESEND_API_KEY: string;
   RESEND_FROM_EMAIL: string;
   LAURA_EMAIL: string;
   SHEETS_WEBHOOK_URL: string;
+  ALLOWED_ORIGIN: string;
+  RATE_LIMIT_KV: KVNamespaceLike;
 }
 
 interface PagesFunctionContext {
@@ -40,6 +47,8 @@ const REQUIRED_FIELDS: (keyof DerivarPayload)[] = [
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const CLOUDINARY_PREFIX = 'https://res.cloudinary.com/dpe4yga4u/';
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const RATE_LIMIT_WINDOW_SECONDS = 10 * 60;
 
 function json(body: unknown, status: number): Response {
   return new Response(JSON.stringify(body), {
@@ -166,10 +175,37 @@ async function sendEmail(env: Env, params: { from: string; to: string; replyTo: 
   return { ok: res.ok && !!id, id, raw, status: res.status };
 }
 
+function isAllowedOrigin(origin: string | null, allowedOrigin: string): boolean {
+  if (!origin) return false;
+  const allowed = allowedOrigin.split(',').map((o) => o.trim()).filter(Boolean);
+  return allowed.includes(origin);
+}
+
+async function checkRateLimit(env: Env, ip: string): Promise<boolean> {
+  const key = `ratelimit:derivar:${ip}`;
+  const current = await env.RATE_LIMIT_KV.get(key);
+  const count = current ? parseInt(current, 10) : 0;
+  if (count >= RATE_LIMIT_MAX_REQUESTS) return false;
+  await env.RATE_LIMIT_KV.put(key, String(count + 1), { expirationTtl: RATE_LIMIT_WINDOW_SECONDS });
+  return true;
+}
+
 export const onRequestPost = async (context: PagesFunctionContext): Promise<Response> => {
   const { request, env, waitUntil } = context;
   const log = (msg: string) => console.log(`[derivar] ${new Date().toISOString()} ${msg}`);
   const logErr = (msg: string) => console.error(`[derivar] ${new Date().toISOString()} ${msg}`);
+
+  const origin = request.headers.get('Origin');
+  if (!isAllowedOrigin(origin, env.ALLOWED_ORIGIN)) {
+    logErr(`origen rechazado: "${origin}"`);
+    return json({ success: false, error: 'Origen no permitido.' }, 403);
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (!(await checkRateLimit(env, ip))) {
+    logErr(`rate limit excedido para IP ${ip}`);
+    return json({ success: false, error: 'Demasiadas peticiones. Inténtalo de nuevo en unos minutos.' }, 429);
+  }
 
   let body: unknown;
   try {
