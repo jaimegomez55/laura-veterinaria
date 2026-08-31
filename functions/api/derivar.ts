@@ -161,7 +161,9 @@ async function sendEmail(env: Env, params: { from: string; to: string; replyTo: 
       html: params.html,
     }),
   });
-  const raw = await res.json().catch(() => null);
+  const rawText = await res.text();
+  let raw: unknown = rawText;
+  try { raw = JSON.parse(rawText); } catch { /* Resend no siempre devuelve JSON en errores */ }
   const id = raw && typeof raw === 'object' && 'id' in raw ? String((raw as { id: unknown }).id) : undefined;
   return { ok: res.ok && !!id, id, raw, status: res.status };
 }
