@@ -183,11 +183,16 @@ function isAllowedOrigin(origin: string | null, allowedOrigin: string): boolean 
 
 async function checkRateLimit(env: Env, ip: string): Promise<boolean> {
   const key = `ratelimit:derivar:${ip}`;
-  const current = await env.RATE_LIMIT_KV.get(key);
-  const count = current ? parseInt(current, 10) : 0;
-  if (count >= RATE_LIMIT_MAX_REQUESTS) return false;
-  await env.RATE_LIMIT_KV.put(key, String(count + 1), { expirationTtl: RATE_LIMIT_WINDOW_SECONDS });
-  return true;
+  try {
+    const current = await env.RATE_LIMIT_KV.get(key);
+    const count = current ? parseInt(current, 10) : 0;
+    if (count >= RATE_LIMIT_MAX_REQUESTS) return false;
+    await env.RATE_LIMIT_KV.put(key, String(count + 1), { expirationTtl: RATE_LIMIT_WINDOW_SECONDS });
+    return true;
+  } catch (err) {
+    console.error(`[derivar] ${new Date().toISOString()} RATE_LIMIT_KV no disponible, se deja pasar la petición sin aplicar el límite: ${err instanceof Error ? err.message : String(err)}`);
+    return true;
+  }
 }
 
 export const onRequestPost = async (context: PagesFunctionContext): Promise<Response> => {
