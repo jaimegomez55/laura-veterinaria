@@ -11,5 +11,5 @@ directory = "./dist"
 # Cada comando devuelve un "id" — sustituye los valores de abajo por esos ids.
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
-id = "TODO_reemplazar_con_el_id_de_wrangler_kv_namespace_create"
-preview_id = "TODO_reemplazar_con_el_id_de_wrangler_kv_namespace_create_--preview"
+id = "21c62f13596647b98588693c9662f2e3"
+preview_id = "8e645db429be4bfb9c7df663cace6572"
