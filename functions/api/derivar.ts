@@ -150,8 +150,10 @@ function buildClinicaEmailHtml(p: DerivarPayload): string {
   return `
   <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#1e3a5f;">
     <p>Hola,</p>
-    <p>Hemos recibido correctamente la derivación de <strong>${escapeHtml(p.paciente)}</strong>. Laura revisará el caso y contactará con el tutor en menos de 48h hábiles.</p>
-    <p>Gracias por confiar en el servicio de nutrición veterinaria.</p>
+    <p>Gracias por confiar en el servicio de nutrición veterinaria de Laura Quintero para la derivación de ${escapeHtml(p.paciente)}.</p>
+    <p>Hemos recibido el caso correctamente. Laura lo revisará y se pondrá en contacto con el tutor en un plazo máximo de 72 horas hábiles.</p>
+    <p>Si necesitas añadir cualquier información sobre este caso, responde a este email y le llegará directamente a Laura.</p>
+    <p>Un saludo,<br>Laura Quintero — Nutrición Veterinaria</p>
   </div>`;
 }
 
@@ -170,7 +172,9 @@ async function sendEmail(env: Env, params: { from: string; to: string; replyTo: 
       html: params.html,
     }),
   });
-  const raw = await res.json().catch(() => null);
+  const rawText = await res.text();
+  let raw: unknown = rawText;
+  try { raw = JSON.parse(rawText); } catch { /* Resend no siempre devuelve JSON en errores */ }
   const id = raw && typeof raw === 'object' && 'id' in raw ? String((raw as { id: unknown }).id) : undefined;
   return { ok: res.ok && !!id, id, raw, status: res.status };
 }
