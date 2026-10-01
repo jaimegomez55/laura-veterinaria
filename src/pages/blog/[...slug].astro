@@ -6,13 +6,24 @@ export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
     params: { slug: post.id.replace(/\.mdx?$/, '') },
-    props: { post },
+    props: { post, allPosts: posts },
   }));
 }
 
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { post, allPosts } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(post);
+
+// Los 3 artículos más recientes, sin contar el actual
+const related = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
+  .map((p) => ({
+    title: p.data.title,
+    description: p.data.description,
+    href: `/blog/${p.id.replace(/\.mdx?$/, '')}/`,
+  }));
 ---
-<BlogPost {...post.data}>
+<BlogPost {...post.data} faqs={remarkPluginFrontmatter.faqs} related={related}>
   <Content />
 </BlogPost>

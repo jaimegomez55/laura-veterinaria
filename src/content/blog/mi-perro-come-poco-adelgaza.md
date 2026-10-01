@@ -1,9 +1,12 @@
 ---
-title: "Mi perro come poco y está adelgazando: cuándo preocuparse de verdad"
-description: "Mi perro come poco y adelgaza: cómo saber si es grave, cómo detectar la pérdida de peso a tiempo y cuándo acudir al veterinario, explicado por una veterinaria nutricionista."
+title: "Mi perro come pero está adelgazando: cuándo preocuparse de verdad"
+description: "Tu perro come pero baja de peso o se le notan las costillas: qué puede estar pasando y cuándo ir al veterinario, explicado por una veterinaria nutricionista."
 pubDate: "2026-08-04"
-keyword: "mi perro come poco y está adelgazando"
+keyword: "mi perro come pero está adelgazando"
 keywords:
+  - "mi perro come poco y está adelgazando"
+  - "mi perro come pero está bajando de peso"
+  - "mi perro come y se le notan las costillas"
   - "perro adelgaza sin motivo"
   - "perro pierde peso comiendo poco"
   - "perro no engorda aunque come"

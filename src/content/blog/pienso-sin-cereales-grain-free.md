@@ -9,7 +9,9 @@ keywords:
   - "dieta sin gluten para perros"
   - "es necesario el grain free"
   - "alergia al gluten en perros"
-answerBlock: "La mayoría de los perros no necesitan un pienso sin cereales. La verdadera intolerancia al gluten es rarísima: solo está confirmada, de forma casi exclusiva, en la raza Irish Setter. El grain free se puso de moda copiando una tendencia humana, no por una necesidad generalizada real, y conviene elegirlo por un motivo diagnosticado, no por precaución sin más."
+  - "grain free significado"
+  - "qué es grain free"
+answerBlock: "Grain free significa «sin cereales»: el pienso sustituye el trigo, el arroz o el maíz por legumbres o patata. La mayoría de los perros no lo necesitan, porque la intolerancia real al gluten es rarísima y solo está confirmada casi en exclusiva en el Irish Setter. Conviene elegirlo por un motivo diagnosticado, no por moda."
 ---
 
 Has visto el sello "grain free" en más bolsas de pienso que nunca. Muchas marcas lo destacan en letras grandes, como si fuera sinónimo de calidad, y es fácil pensar que si no lleva cereales, es automáticamente mejor para tu perro. Pero antes de pagar más por un pienso sin cereales, merece la pena preguntarse: ¿tiene esto una base real, o es una tendencia que hemos copiado de la alimentación humana?
@@ -19,6 +21,8 @@ La respuesta corta es que, para la inmensa mayoría de los perros, un pienso con
 ## ¿Qué significa que un pienso sea "grain free"?
 
 "Grain free" o "sin cereales" significa que la fórmula no lleva trigo, arroz, avena, cebada ni maíz como fuente de carbohidratos. En su lugar, se sustituyen por legumbres (guisante, lenteja) o tubérculos (patata, boniato). No es exactamente lo mismo que "sin gluten", aunque en la práctica casi siempre coincide, porque el gluten se encuentra sobre todo en el trigo, la cebada y el centeno.
+
+En las bolsas también verás "no grain", que significa exactamente lo mismo que grain free, y "low grain", que no es lo mismo: es un pienso que sí lleva cereales, pero en menor proporción que uno convencional.
 
 ## ¿De verdad hay tantos perros intolerantes al gluten? Lo que dicen los estudios
 

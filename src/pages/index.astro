@@ -17,7 +17,9 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Laura Quintero',
+    '@id': 'https://lauraquinteroveterinaria.com/#laura',
+    name: 'Laura Quintero Álvarez',
+    alternateName: 'Laura Quintero',
     jobTitle: 'Nutricionista veterinaria',
     description:
       'Veterinaria especializada en nutrición clínica para perros y gatos. Ofrece asesoramiento nutricional online personalizado a toda España.',
@@ -27,6 +29,40 @@ const jsonLd = [
     sameAs: [
       'https://www.linkedin.com/in/laura-quintero-veterinaria/',
       'https://www.instagram.com/laura_quintero_veterinaria/',
+      'https://vetesfera.com/autor/laura-quintero-alvarez/',
+      'https://aux.streaming.ifevet.com/laura-quintero-alvarez/',
+    ],
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Universidad de Santiago de Compostela',
+    },
+    hasCredential: [
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'degree',
+        name: 'Grado en Veterinaria',
+        recognizedBy: { '@type': 'CollegeOrUniversity', name: 'Universidad de Santiago de Compostela' },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Posgrado',
+        name: 'Posgrado en Clínica de Pequeños Animales',
+        recognizedBy: { '@type': 'Organization', name: 'IFEVET' },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'Posgrado',
+        name: 'Postgraduate Certificate en Cirugía de Tejidos Blandos en Perros y Gatos',
+        recognizedBy: { '@type': 'Organization', name: 'IFEVET' },
+      },
+    ],
+    knowsAbout: [
+      'Nutrición clínica veterinaria',
+      'Nutrición canina',
+      'Nutrición felina',
+      'Dietas caseras para perros y gatos',
+      'Alimentación de perros y gatos con patologías',
+      'Medicina interna de pequeños animales',
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -42,11 +78,7 @@ const jsonLd = [
     name: 'Consulta de nutrición veterinaria personalizada',
     description:
       'Asesoramiento nutricional online para perros y gatos, con dieta adaptada a la patología del animal y acompañamiento continuo cada dos semanas.',
-    provider: {
-      '@type': 'Person',
-      name: 'Laura Quintero',
-      url: 'https://lauraquinteroveterinaria.com',
-    },
+    provider: { '@id': 'https://lauraquinteroveterinaria.com/#laura' },
     areaServed: {
       '@type': 'Country',
       name: 'España',
