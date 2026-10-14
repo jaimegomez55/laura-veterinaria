@@ -22,7 +22,7 @@ const jsonLd = [
     alternateName: 'Laura Quintero',
     jobTitle: 'Nutricionista veterinaria',
     description:
-      'Veterinaria especializada en nutrición clínica para perros y gatos. Ofrece asesoramiento nutricional online personalizado a toda España.',
+      'Veterinaria colegiada especializada en nutrición clínica para perros y gatos. Ofrece asesoramiento nutricional online personalizado a toda España.',
     url: 'https://lauraquinteroveterinaria.com',
     telephone: '+34634359766',
     email: 'laura.quintero.vet@gmail.com',
@@ -35,6 +35,10 @@ const jsonLd = [
     alumniOf: {
       '@type': 'CollegeOrUniversity',
       name: 'Universidad de Santiago de Compostela',
+    },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Colegio Oficial de Veterinarios de Pontevedra',
     },
     hasCredential: [
       {
@@ -54,6 +58,13 @@ const jsonLd = [
         credentialCategory: 'Posgrado',
         name: 'Postgraduate Certificate en Cirugía de Tejidos Blandos en Perros y Gatos',
         recognizedBy: { '@type': 'Organization', name: 'IFEVET' },
+      },
+      {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: 'license',
+        name: 'Veterinaria colegiada nº PO-1377',
+        identifier: 'PO-1377',
+        recognizedBy: { '@type': 'Organization', name: 'Colegio Oficial de Veterinarios de Pontevedra' },
       },
     ],
     knowsAbout: [

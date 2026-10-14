@@ -4,6 +4,8 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import CookieBanner from '../components/CookieBanner';
+import { Image } from 'astro:assets';
+import lauraPhoto from '../assets/images/laura.jpeg';
 
 interface Faq {
   question: string;
@@ -51,6 +53,7 @@ const blogPostingSchema = {
       'https://vetesfera.com/autor/laura-quintero-alvarez/',
       'https://aux.streaming.ifevet.com/laura-quintero-alvarez/',
     ],
+    memberOf: { '@type': 'Organization', name: 'Colegio Oficial de Veterinarios de Pontevedra' },
   },
   publisher: {
     '@type': 'Person',
@@ -111,6 +114,17 @@ const jsonLd = faqSchema ? [blogPostingSchema, faqSchema] : [blogPostingSchema];
         prose-strong:text-[#1e3a5f]">
         <slot />
       </div>
+
+      <!-- Firma de la autora -->
+      <aside class="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5 rounded-2xl border border-gray-100 bg-gray-50 p-6">
+        <Image src={lauraPhoto} alt="Laura Quintero Álvarez, veterinaria colegiada" width={160} height={187} class="w-20 h-20 flex-shrink-0 rounded-full object-cover object-top" format="webp" loading="lazy" />
+        <div>
+          <p class="text-sm text-gray-500">Escrito por</p>
+          <p class="text-lg font-bold text-[#1e3a5f]">Laura Quintero Álvarez</p>
+          <p class="text-sm text-gray-600 mt-1 leading-relaxed">Veterinaria colegiada especializada en nutrición clínica de perros y gatos. Graduada en Veterinaria por la Universidad de Santiago de Compostela. Colegiada nº PO-1377 del Colegio Oficial de Veterinarios de Pontevedra.</p>
+          <a href="/#about" class="inline-block mt-2 text-sm font-semibold text-[#1e3a5f] underline hover:text-[#f2bac9] transition-colors">Más sobre Laura</a>
+        </div>
+      </aside>
 
       <!-- CTA al final del artículo -->
       <div class="mt-16 bg-gradient-to-br from-[#bad7f2] to-[#f2bac9] rounded-2xl p-8 text-center">
