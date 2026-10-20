@@ -1,0 +1,19 @@
+---
+// TEMPORAL: aviso de baja por maternidad de Laura en la página de derivaciones.
+// Para quitarlo cuando vuelva: poner SHOW_MATERNITY_NOTICE = false en src/pages/deriva-un-caso.astro
+// (o borrar este componente y su uso en esa página).
+const URGENT_URL = 'https://www.saludrealanimal.com/laura-quintero-primera-cita';
+---
+<div role="status" aria-labelledby="maternity-notice-title" class="max-w-2xl mx-auto mb-10 text-left bg-white/90 bg-gradient-to-br from-[#bad7f2]/30 to-[#f2bac9]/30 border-l-4 border-[#f2bac9] rounded-r-2xl shadow-sm p-6 md:p-8">
+  <h2 id="maternity-notice-title" class="text-xl md:text-2xl font-bold text-[#1e3a5f] mb-4">Baja por maternidad</h2>
+  <div class="space-y-3 text-base md:text-lg text-[#1e3a5f] leading-relaxed font-['Merriweather']">
+    <p>Actualmente me encuentro de baja por maternidad y no estaré disponible para atender nuevas consultas.</p>
+    <p>Este formulario sigue vigente y podéis utilizarlo pero me pondré en contacto con la persona indicada a mi regreso.</p>
+    <p>Para consultas urgentes, podéis utilizar el siguiente enlace tal y como indiqué en el email informativo enviado a las clínicas colaboradoras:</p>
+  </div>
+  <a href={URGENT_URL} target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 max-w-full min-h-[44px] bg-[#1e3a5f] hover:bg-[#2b4f7d] text-white font-semibold text-sm md:text-base px-5 py-3 rounded-2xl shadow-md transition-colors break-all focus:outline-none focus-visible:ring-4 focus-visible:ring-[#f2bac9]">
+    <span aria-hidden="true">👉</span>
+    <span>{URGENT_URL}</span>
+    <span class="sr-only">(se abre en una pestaña nueva)</span>
+  </a>
+</div>
